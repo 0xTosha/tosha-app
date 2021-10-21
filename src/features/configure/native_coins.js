@@ -1,5 +1,13 @@
 export const nativeCoins = [
   {
+    chainId: 44787,
+    name: 'Celo',
+    symbol: 'CELO',
+    decimals: 18,
+    wrappedSymbol: 'WCELO',
+    allowance: Infinity,
+  },
+  {
     chainId: 1,
     name: 'Ethereum',
     symbol: 'ETH',
@@ -8,7 +16,7 @@ export const nativeCoins = [
     allowance: Infinity,
   },
   {
-    chainId: 56,
+    chainId: 97,
     name: 'Binance Coin',
     symbol: 'BNB',
     decimals: 18,

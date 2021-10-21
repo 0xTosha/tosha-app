@@ -46,20 +46,24 @@ export default function Pools() {
   useEffect(() => {
     const fetch = () => {
       if (address && web3 && !fetchBalancesPending) {
+        console.log('WEB3');
+        console.log(web3);
         fetchBalances({ address, web3, tokens });
+        console.log('Balances OK!');
       }
       if (!fetchVaultsDataPending) {
+        console.log('Fetching Vault Data');
         fetchVaultsData({ web3, pools });
       }
     };
     fetch();
-
+    console.log('FETCHNIG....Ethe');
     const id = setInterval(fetch, FETCH_INTERVAL_MS);
     return () => clearInterval(id);
 
     // Adding tokens and pools to this dep list, causes an endless loop, DDoSing the api
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [address, web3, fetchBalances, fetchVaultsData]);
+  }, [address, web3, fetchBalances]);
 
   const chainNameLowercase = getNetworkFriendlyName().toLowerCase();
   const chainBifibuyback =

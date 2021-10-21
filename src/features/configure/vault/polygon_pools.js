@@ -4,7 +4,7 @@ export const polygonPools = [
     logo: 'single-assets/BIFI.png',
     name: 'BIFI Maxi',
     token: 'BIFI',
-    tokenDescription: 'Beefy.Finance',
+    tokenDescription: 'tosha.finance',
     tokenAddress: '0xFbdd194376de19a88118e84E279b977f165d01b8',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
@@ -18,7 +18,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Beefy.Finance',
+    platform: 'tosha.finance',
     assets: ['BIFI'],
     withdrawalFee: '0.05%',
     buyTokenUrl:

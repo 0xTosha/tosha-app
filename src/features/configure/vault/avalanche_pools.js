@@ -4,7 +4,7 @@ export const avalanchePools = [
     logo: 'single-assets/BIFI.png',
     name: 'BIFI Maxi',
     token: 'BIFI',
-    tokenDescription: 'Beefy.Finance',
+    tokenDescription: 'tosha.finance',
     tokenAddress: '0xd6070ae98b8069de6B494332d1A1a81B6179D960',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
@@ -18,7 +18,7 @@ export const avalanchePools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Beefy.Finance',
+    platform: 'tosha.finance',
     assets: ['BIFI'],
     withdrawalFee: '0.05%',
     buyTokenUrl:

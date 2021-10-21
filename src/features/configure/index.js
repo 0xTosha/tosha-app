@@ -8,6 +8,7 @@ const {
   fantom: fantomAddressBook,
   one: harmonyAddressBook,
   arbitrum: arbitrumAddressBook,
+  celo: celoAddressBook,
 } = addressBook;
 export {
   bscAddressBook,
@@ -17,6 +18,7 @@ export {
   fantomAddressBook,
   harmonyAddressBook,
   arbitrumAddressBook,
+  celoAddressBook,
 };
 
 export {
@@ -33,6 +35,7 @@ export {
 export { bscStakePools } from './stake/bsc_stake';
 export { hecoStakePools } from './stake/heco_stake';
 export { avalancheStakePools } from './stake/avalanche_stake';
+export { celoStakePools } from './stake/celo_stake';
 export { polygonStakePools } from './stake/polygon_stake';
 export { fantomStakePools } from './stake/fantom_stake';
 export { harmonyStakePools } from './stake/harmony_stake';
@@ -40,6 +43,7 @@ export { arbitrumStakePools } from './stake/arbitrum_stake';
 export { bscPools } from './vault/bsc_pools';
 export { hecoPools } from './vault/heco_pools';
 export { avalanchePools } from './vault/avalanche_pools';
+export { celoPools } from './vault/celo_pools';
 export { polygonPools } from './vault/polygon_pools';
 export { fantomPools } from './vault/fantom_pools';
 export { harmonyPools } from './vault/harmony_pools';

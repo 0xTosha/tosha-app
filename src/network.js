@@ -1,9 +1,15 @@
 /* eslint-disable import/first */
 export const allNetworks = [
   {
+    name: 'CELO',
+    asset: 'CELO',
+    id: 44787,
+    hash: '/celo',
+  },
+  {
     name: 'BSC',
     asset: 'BSC',
-    id: 56,
+    id: 97,
     hash: '/bsc',
   },
   {

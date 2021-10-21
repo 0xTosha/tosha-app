@@ -11,7 +11,7 @@ One of the mechanisms to reward dev work are treasury bounties. Bounties can be 
 ## Steps
 
 ### 1. Fill out a proposal
-Go to [vote.beefy.finance](https://vote.beefy.finance) and click on the big square that says "Beefy.Finance". Once you're in, click on the [New Proposal](https://vote.beefy.finance/#/beefy/create) button.
+Go to [vote.tosha.finance](https://vote.tosha.finance) and click on the big square that says "tosha.finance". Once you're in, click on the [New Proposal](https://vote.tosha.finance/#/beefy/create) button.
 
 #### A - Title
 Going with "Bounty of $<AMOUNT> for <ISSUE_TITLE>" is a good standard.

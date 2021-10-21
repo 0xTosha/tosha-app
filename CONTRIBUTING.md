@@ -1,7 +1,7 @@
 Contributing to the Beefy App
 =======
 
-We really appreciate and value contributions to the Beefy.Finance repositories. Please take 5' to review the items listed below to make sure that your contributions are merged as soon as possible.
+We really appreciate and value contributions to the tosha.finance repositories. Please take 5' to review the items listed below to make sure that your contributions are merged as soon as possible.
 
 ## Creating Pull Requests (PRs)
 
@@ -37,7 +37,7 @@ git push origin fix/some-bug-#123
 
 5) Maintainers will review your code and possibly ask for changes before your code is pulled in to the main repository. We'll check that all tests pass, review the coding style, and check for general code correctness. If everything is OK, we'll merge your pull request and your code will be part of Beefy's App.
 
-*IMPORTANT* Please pay attention to the maintainer's feedback, since its a necessary step to keep up with the standards Beefy.Finance attains to.
+*IMPORTANT* Please pay attention to the maintainer's feedback, since its a necessary step to keep up with the standards tosha.finance attains to.
 
 ## All set!
 
@@ -47,10 +47,10 @@ Finally, if you're looking to collaborate and want to find easy tasks to start, 
 
 ## Contributor rewards 
 
-Beefy wants to be a self-sustainable community. A portion of the fees that come from running the vaults at [beefy.finance](https://app.beefy.finance) goes into a community managed treasury. The treasury is used to pay for marketing, community managers, developers, etc. We are learning together how to do this in a fair and effective way. When it comes to devs there are a few options: 
+Beefy wants to be a self-sustainable community. A portion of the fees that come from running the vaults at [tosha.finance](https://app.tosha.finance) goes into a community managed treasury. The treasury is used to pay for marketing, community managers, developers, etc. We are learning together how to do this in a fair and effective way. When it comes to devs there are a few options: 
 
 1. There are some issues that will have a "Treasury Bounty" tag and a dollar amount in the issue title. This means that the issue carries a reward to the dev that closes it. 
 2. You can propose a bounty or budget to get something done by following our [proposal guidelines](PROPOSAL_GUIDELINES.md)
-3. We are tracking all contributions using [Sourcecred](https://sourcecred.io/). This is a project designed specifically to track community contributions. We have [our instance](https://beefy.finance/beefy-cred/#/explorer) and track GitHub contributions. A percentage of the treasury funds might be used every month to reward developers based on that distribution. This initiative is just getting started.
+3. We are tracking all contributions using [Sourcecred](https://sourcecred.io/). This is a project designed specifically to track community contributions. We have [our instance](https://tosha.finance/beefy-cred/#/explorer) and track GitHub contributions. A percentage of the treasury funds might be used every month to reward developers based on that distribution. This initiative is just getting started.
 
 Thanks for your time and code!

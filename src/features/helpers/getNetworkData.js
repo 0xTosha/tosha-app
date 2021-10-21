@@ -11,6 +11,9 @@ import {
   bscStakePools,
   bscAddressBook,
   bscZaps,
+  celoStakePools,
+  celoPools,
+  celoAddressBook,
   fantomPools,
   fantomStakePools,
   fantomAddressBook,
@@ -39,6 +42,7 @@ import { allNetworks } from '../../network';
 export const appNetworkId = window.REACT_APP_NETWORK_ID;
 
 const networkTxUrls = {
+  44787: hash => `https://alfajores-blockscout.celo-testnet.org/tx/${hash}`,
   56: hash => `https://bscscan.com/tx/${hash}`,
   128: hash => `https://hecoinfo.com/tx/${hash}`,
   43114: hash => `https://cchain.explorer.avax.network/tx/${hash}/token-transfers`,
@@ -49,7 +53,8 @@ const networkTxUrls = {
 };
 
 const networkFriendlyName = {
-  56: 'BSC',
+  44787: 'Celo (Alfajores)',
+  97: 'BSC',
   128: 'HECO',
   43114: 'AVAX',
   137: 'Polygon',
@@ -59,11 +64,13 @@ const networkFriendlyName = {
 };
 
 const networkBuyUrls = {
+  44787: 'https://app.1inch.io/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B',
   56: 'https://app.1inch.io/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B',
   128: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a&outputCurrency=0x765277eebeca2e31912c9946eae1021199b39c61',
   137: 'https://app.1inch.io/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B',
   250: 'https://spookyswap.finance/swap?inputCurrency=0x04068da6c83afcfa0e13ba15a6696662335d5b75&outputCurrency=0xd6070ae98b8069de6B494332d1A1a81B6179D960',
-  43114: 'https://www.traderjoexyz.com/#/trade?outputCurrency=0xd6070ae98b8069de6b494332d1a1a81b6179d960',
+  43114:
+    'https://www.traderjoexyz.com/#/trade?outputCurrency=0xd6070ae98b8069de6b494332d1a1a81b6179d960',
   1666600000: '',
   42161: '',
 };
@@ -74,7 +81,9 @@ export const getNetworkCoin = () => {
 
 export const getNetworkPools = () => {
   switch (window.REACT_APP_NETWORK_ID) {
-    case 56:
+    case 44787:
+      return celoPools;
+    case 97:
       return bscPools;
     case 128:
       return hecoPools;
@@ -95,7 +104,9 @@ export const getNetworkPools = () => {
 
 export const getNetworkVaults = (networkId = appNetworkId) => {
   switch (networkId) {
-    case 56:
+    case 44787:
+      return indexBy(celoPools, 'id');
+    case 97:
       return indexBy(bscPools, 'id');
     case 128:
       return indexBy(hecoPools, 'id');
@@ -116,7 +127,9 @@ export const getNetworkVaults = (networkId = appNetworkId) => {
 
 export const getNetworkLaunchpools = (networkId = appNetworkId) => {
   switch (networkId) {
-    case 56:
+    case 44787:
+      return indexBy(celoStakePools, 'id');
+    case 97:
       return indexBy(bscStakePools, 'id');
     case 128:
       return indexBy(hecoStakePools, 'id');
@@ -138,7 +151,36 @@ export const getNetworkLaunchpools = (networkId = appNetworkId) => {
 export const getNetworkTokens = () => {
   const chainId = window.REACT_APP_NETWORK_ID;
   switch (chainId) {
-    case 56:
+    case 44787:
+      console.log('NETWORK TOKENS');
+      const t = {
+        CELO: {
+          chainId: 44787,
+          address: '0xE1Ea3fc4413e143AF108973342d76080622E66c4',
+          decimals: 18,
+          name: 'TOSHA',
+          symbol: 'TOSHA',
+          website: 'https://app.wonderland.money/#/stake',
+          description:
+            'TOSHA TOSHA TOSHA is the first decentralized reserve currency protocol available on the Avalanche Network based on the TIME token. Each TIME token is backed by a basket of assets (e.g., MIM, TIME-AVAX LP Tokens etc etc) in the Wonderland treasury, giving it an intrinsic value that it cannot fall below. Wonderland also introduces economic and game-theoretic dynamics into the market through staking and bonding.',
+          logoURI:
+            'https://gblobscdn.gitbook.com/assets%2F-MhzA-YXhEZ1wM1iWJEo%2F-MiQzpjkumrqycMXcTj6%2F-MiR0TC116IqSmoKpkwX%2FTime%20Token.png?alt=media&token=9ba1004c-5e23-4e6e-b4f8-19f109c557d0',
+        },
+        cUSD: {
+          chainId: 44787,
+          address: '0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9',
+          decimals: 18,
+          name: 'Celo Dollar',
+          symbol: 'CUSD',
+          website: 'https://www.mai.finance/',
+          description:
+            "MAI is a stable coin collateralized by your MATIC holdings. It's powered by Qi Dao, a protocol that enables any cryptocurrency community to create stablecoins backed by their native tokens.",
+          logoURI: 'https://raw.githubusercontent.com/0xlaozi/qidao/main/images/mimatic-red.png',
+        },
+      };
+      // console.log(celoAddressBook.tokens);
+      return t; // celoAddressBook.tokens;
+    case 97:
       return bscAddressBook.tokens;
     case 128:
       return hecoAddressBook.tokens;
@@ -161,7 +203,9 @@ export const getNetworkTokens = () => {
 
 export const getNetworkBurnTokens = () => {
   switch (window.REACT_APP_NETWORK_ID) {
-    case 56:
+    case 44787:
+      return {}; // celo addressbook?
+    case 97:
       return {
         [bscAddressBook.tokens.GARUDA.symbol]: bscAddressBook.tokens.GARUDA,
         [bscAddressBook.tokens.SDUMP.symbol]: bscAddressBook.tokens.SDUMP,
@@ -196,7 +240,7 @@ export const getNetworkBurnTokens = () => {
 
 export const getNetworkZaps = () => {
   switch (window.REACT_APP_NETWORK_ID) {
-    case 56:
+    case 97:
       return bscZaps;
     case 128:
       return hecoZaps;
@@ -217,7 +261,9 @@ export const getNetworkZaps = () => {
 
 export const getNetworkStables = () => {
   switch (window.REACT_APP_NETWORK_ID) {
-    case 56:
+    case 44787:
+      return ['cUSD', 'cEUR'];
+    case 97:
       return [
         'BUSD',
         'USDT',
@@ -268,8 +314,10 @@ export const getNetworkStables = () => {
 
 export const getNetworkMulticall = () => {
   switch (window.REACT_APP_NETWORK_ID) {
-    case 56:
-      return '0xB94858b0bB5437498F5453A16039337e5Fdc269C';
+    case 44787:
+      return '0xDd488d424357F83B6Eb42900B65EB59CaFAdB43d';
+    case 97:
+      return '0xbBF339dC4817F669Ff56e18E1B3222052Df19dcb';
     case 128:
       return '0x2776CF9B6E2Fa7B33A37139C3CB1ee362Ff0356e';
     case 43114:
@@ -289,7 +337,20 @@ export const getNetworkMulticall = () => {
 
 export const getNetworkConnectors = t => {
   switch (window.REACT_APP_NETWORK_ID) {
-    case 56:
+    case 44787:
+      return {
+        network: 'celo',
+        cacheProvider: true,
+        providerOptions: {
+          injected: {
+            display: {
+              name: 'Injected',
+              description: 'Celo Description',
+            },
+          },
+        },
+      };
+    case 97:
       return {
         network: 'binance',
         cacheProvider: true,

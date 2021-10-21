@@ -1,0 +1,27 @@
+export const celoPools = [
+  {
+    id: 'celo-tosh-maxi',
+    logo: 'single-assets/BIFI.png',
+    name: 'CELO Maxi',
+    token: 'TOSHA',
+    tokenDescription: 'Tosha.Finance',
+    tokenAddress: '0xE1Ea3fc4413e143AF108973342d76080622E66c4',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'ToshaLP',
+    earnedTokenAddress: '0x021F09399fE684135D3eA96506075b175E822967',
+    earnContractAddress: '0x021F09399fE684135D3eA96506075b175E822967',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: 'TOSHA',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'tosha.finance',
+    assets: ['TOSHA'],
+    withdrawalFee: '0.05%',
+    buyTokenUrl:
+      'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xd6070ae98b8069de6B494332d1A1a81B6179D960',
+  },
+];

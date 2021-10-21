@@ -24,7 +24,8 @@ export function fetchVaultsData({ web3, pools }) {
       // setup default provider to get vault data
       web3 = new Web3(new Web3.providers.HttpProvider(getRpcUrl()));
     }
-
+    console.log('FETCHING VAULT');
+    console.log(pools);
     const promise = new Promise((resolve, reject) => {
       const multicall = new MultiCall(web3, getNetworkMulticall());
       const vaultCalls = pools.map(pool => {
@@ -34,12 +35,16 @@ export function fetchVaultsData({ web3, pools }) {
           tvl: vault.methods.balance(),
         };
       });
-
+      console.log('Calling vaultCalls');
+      console.log(multicall);
       Promise.all([
         multicall.all([vaultCalls]).then(result => result[0]),
-        whenPricesLoaded(), // need to wait until prices are loaded in cache
+        // console.log(result)
+        // whenPricesLoaded(), // need to wait until prices are loaded in cache
       ])
         .then(data => {
+          console.log('THEN');
+          console.log(data);
           const newPools = pools.map((pool, i) => {
             const pricePerFullShare = byDecimals(data[0][i].pricePerFullShare, 18).toNumber();
             return {
@@ -55,6 +60,8 @@ export function fetchVaultsData({ web3, pools }) {
           resolve();
         })
         .catch(error => {
+          console.log('VAULT ERROR');
+          console.log(error);
           dispatch({
             type: VAULT_FETCH_VAULTS_DATA_FAILURE,
           });

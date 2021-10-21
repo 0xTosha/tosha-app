@@ -36,17 +36,17 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           <Button className={classes.title}>
             <Hidden xsDown>
               <img
-                alt="BIFI"
-                src={require(`images/BIFI-logo.svg`)}
+                alt="TOSHA"
+                src={require(`images/logot.png`)}
                 height={'40px'}
                 className={classes.logo}
               />
-              beefy.finance
+              tosha finance
             </Hidden>
             <Hidden smUp>
               <img
                 alt="BIFI"
-                src={require(`images/BIFI-logo.svg`)}
+                src={require(`images/logot.png`)}
                 height={'35px'}
                 className={classes.logo}
               />
@@ -55,16 +55,16 @@ const Header = ({ links, isNightMode, setNightMode }) => {
         </Link>
 
         <div className={classes.middleNav}>
-          <Hidden smDown>
+          {/* <Hidden smDown>
             {renderLink('vote', t('vote'), 'vote-yea', classes)}
             {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
             {renderLink('docs', t('docs'), 'book', classes)}
             {renderLink('forum', t('forum'), 'comments', classes)}
-          </Hidden>
-          {renderLink('buy', t('buy'), 'dollar-sign', classes)}
-          <Link className={classes.btnBoost} to={`/${chain}/stake`}>
+          </Hidden> */}
+          {/* {renderLink('buy', t('buy'), 'dollar-sign', classes)} */}
+          {/* <Link className={classes.btnBoost} to={`/${chain}/stake`}>
             <img alt="Boost" src={require('images/stake/boost.svg')} />
-          </Link>
+          </Link> */}
         </div>
 
         <Hidden smDown implementation="css">
@@ -81,7 +81,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
         </Hidden>
       </Toolbar>
 
-      <Hidden mdUp implementation="js">
+      {/* <Hidden mdUp implementation="js">
         <Drawer
           variant="temporary"
           anchor={'right'}
@@ -111,7 +111,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             </IconButton>
           </div>
         </Drawer>
-      </Hidden>
+      </Hidden> */}
     </AppBar>
   );
 };
@@ -136,7 +136,7 @@ const LinkSidebar = ({ name, label, icon, classes }) => (
 );
 
 const getLinkUrl = name => {
-  return name === 'buy' ? getNetworkBuyUrl() : `https://${name}.beefy.finance`;
+  return name === 'buy' ? getNetworkBuyUrl() : `https://${name}.tosha.finance`;
 };
 
 export default Header;

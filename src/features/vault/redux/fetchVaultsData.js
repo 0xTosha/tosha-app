@@ -1,18 +1,19 @@
-import { useCallback } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import BigNumber from 'bignumber.js';
-import { MultiCall } from 'eth-multicall';
 import {
   VAULT_FETCH_VAULTS_DATA_BEGIN,
-  VAULT_FETCH_VAULTS_DATA_SUCCESS,
   VAULT_FETCH_VAULTS_DATA_FAILURE,
+  VAULT_FETCH_VAULTS_DATA_SUCCESS,
 } from './constants';
-import { fetchPrice, whenPricesLoaded } from '../../web3';
 import { erc20ABI, vaultABI } from '../../configure';
+import { fetchPrice, whenPricesLoaded } from '../../web3';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+
+import BigNumber from 'bignumber.js';
+import { MultiCall } from 'eth-multicall';
+import Web3 from 'web3';
 import { byDecimals } from 'features/helpers/bignumber';
 import { getNetworkMulticall } from 'features/helpers/getNetworkData';
-import Web3 from 'web3';
 import { getRpcUrl } from 'common/networkSetup';
+import { useCallback } from 'react';
 
 export function fetchVaultsData({ web3, pools }) {
   return dispatch => {
@@ -24,8 +25,8 @@ export function fetchVaultsData({ web3, pools }) {
       // setup default provider to get vault data
       web3 = new Web3(new Web3.providers.HttpProvider(getRpcUrl()));
     }
-    console.log('FETCHING VAULT');
-    console.log(pools);
+    // console.log('FETCHING VAULT');
+    // console.log(pools);
     const promise = new Promise((resolve, reject) => {
       const multicall = new MultiCall(web3, getNetworkMulticall());
       const vaultCalls = pools.map(pool => {
@@ -35,16 +36,16 @@ export function fetchVaultsData({ web3, pools }) {
           tvl: vault.methods.balance(),
         };
       });
-      console.log('Calling vaultCalls');
-      console.log(multicall);
+      // console.log('Calling vaultCalls');
+      // console.log(multicall);
       Promise.all([
         multicall.all([vaultCalls]).then(result => result[0]),
         // console.log(result)
         // whenPricesLoaded(), // need to wait until prices are loaded in cache
       ])
         .then(data => {
-          console.log('THEN');
-          console.log(data);
+          // console.log('THEN');
+          // console.log(data);
           const newPools = pools.map((pool, i) => {
             const pricePerFullShare = byDecimals(data[0][i].pricePerFullShare, 18).toNumber();
             return {

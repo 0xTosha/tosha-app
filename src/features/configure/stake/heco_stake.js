@@ -4,7 +4,7 @@ export const hecoStakePools = [
   {
     id: 'bifi-ht',
     name: 'BIFI',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'BIFI',
     tokenDecimals: 18,
     tokenAddress: '0x765277EebeCA2e31912C9946eAe1021199B39C61',

@@ -4,7 +4,7 @@ export const harmonyStakePools = [
   {
     id: 'bifi-harmony',
     name: 'BIFI',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'BIFI',
     tokenDecimals: 18,
     tokenAddress: '0x6aB6d61428fde76768D7b45D8BFeec19c6eF91A8',

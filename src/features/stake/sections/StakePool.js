@@ -1,8 +1,15 @@
+import {
+  Avatar,
+  Box,
+  Dialog,
+  Grid,
+  TextField,
+  Typography,
+  makeStyles,
+  useTheme,
+} from '@material-ui/core';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
-import BigNumber from 'bignumber.js';
+import { formatApy, formatDecimals, formatPercent } from '../../helpers/format';
 import {
   useFetchApproval,
   useFetchClaim,
@@ -21,33 +28,24 @@ import {
   useUserStaked,
 } from '../redux/hooks';
 
-import {
-  Avatar,
-  Box,
-  Dialog,
-  Grid,
-  makeStyles,
-  TextField,
-  Typography,
-  useTheme,
-} from '@material-ui/core';
-
-import TwitterIcon from '@material-ui/icons/Twitter';
-import TelegramIcon from '@material-ui/icons/Telegram';
-
-import Button from '../../../components/CustomButtons/Button';
-import { styles } from './styles/view';
-import Divider from '@material-ui/core/Divider';
-import { formatApy, formatDecimals, formatPercent } from '../../helpers/format';
-import { Helmet } from 'react-helmet';
-import { usePageMeta } from '../../common/getPageMeta';
-import { launchpools } from '../../helpers/getNetworkData';
-import { useSelector } from 'react-redux';
-import { StakeCountdown } from './StakeCountdown';
-import ValueLoader from '../../common/components/ValueLoader/ValueLoader';
-import { NetworkRequired } from '../../../components/NetworkRequired/NetworkRequired';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
+import BigNumber from 'bignumber.js';
+import Button from '../../../components/CustomButtons/Button';
+import Divider from '@material-ui/core/Divider';
+import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
+import { NetworkRequired } from '../../../components/NetworkRequired/NetworkRequired';
+import { StakeCountdown } from './StakeCountdown';
+import TelegramIcon from '@material-ui/icons/Telegram';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import ValueLoader from '../../common/components/ValueLoader/ValueLoader';
 import { getSingleAssetSrc } from '../../helpers/getSingleAssetSrc';
+import { launchpools } from '../../helpers/getNetworkData';
+import { styles } from './styles/view';
+import { usePageMeta } from '../../common/getPageMeta';
+import { useParams } from 'react-router';
+import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(styles);
 

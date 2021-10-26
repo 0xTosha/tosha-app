@@ -1,14 +1,15 @@
-import { useCallback } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
   VAULT_FETCH_BALANCES_BEGIN,
-  VAULT_FETCH_BALANCES_SUCCESS,
   VAULT_FETCH_BALANCES_FAILURE,
+  VAULT_FETCH_BALANCES_SUCCESS,
 } from './constants';
-import { MultiCall } from 'eth-multicall';
 import { erc20ABI, multicallABI, uniswapV2PairABI } from 'features/configure';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+
+import { MultiCall } from 'eth-multicall';
 import { byDecimals } from 'features/helpers/bignumber';
 import { getNetworkMulticall } from 'features/helpers/getNetworkData';
+import { useCallback } from 'react';
 
 export function fetchBalances({ address, web3, tokens }) {
   return dispatch => {
@@ -17,24 +18,24 @@ export function fetchBalances({ address, web3, tokens }) {
     dispatch({
       type: VAULT_FETCH_BALANCES_BEGIN,
     });
-    console.log('FETCHBALANCES:');
-    console.log(tokens);
-    let tokenAddress = '0xE1Ea3fc4413e143AF108973342d76080622E66c4';
-    //  let spender = "0x021F09399fE684135D3eA96506075b175E822967";
-    let contract = new web3.eth.Contract(erc20ABI, tokenAddress);
-    contract.methods
-      .balanceOf(address)
-      .call()
-      .then(response => {
-        console.log('allowabce');
-        console.log(response);
-        console.log('>>>>>>>>>>>>');
-      })
-      .catch(error => {
-        console.log('Allowance FETCH ERROR');
-        console.log(error);
-        console.log('<<<<<<<<<');
-      });
+    // // console.log('FETCHBALANCES:');
+    // // console.log(tokens);
+    // let tokenAddress = '0xE1Ea3fc4413e143AF108973342d76080622E66c4';
+    // //  let spender = "0x021F09399fE684135D3eA96506075b175E822967";
+    // let contract = new web3.eth.Contract(erc20ABI, tokenAddress);
+    // contract.methods
+    //   .balanceOf(address)
+    //   .call()
+    //   .then(response => {
+    //     console.log('allowabce');
+    //     console.log(response);
+    //     console.log('>>>>>>>>>>>>');
+    //   })
+    //   .catch(error => {
+    //     console.log('Allowance FETCH ERROR');
+    //     console.log(error);
+    //     console.log('<<<<<<<<<');
+    //   });
 
     const promise = new Promise((resolve, reject) => {
       const multicall = new MultiCall(web3, getNetworkMulticall());
@@ -59,7 +60,7 @@ export function fetchBalances({ address, web3, tokens }) {
             symbol: symbol,
           });
         } else {
-          console.log(`tokenContract.tokenAddress ${symbol} --${token.tokenAddress} -- ${address}`);
+          // console.log(`tokenContract.tokenAddress ${symbol} --${token.tokenAddress} -- ${address}`);
           // token.tokenAddress = '0xceddAA2cB6F36C238ddb5B31E469B48F898F4D13';
           // console.log(token.tokenAddress);
           const tokenContract = new web3.eth.Contract(erc20ABI, token.tokenAddress);
@@ -69,8 +70,8 @@ export function fetchBalances({ address, web3, tokens }) {
             symbol: symbol,
           });
           Object.entries(token.allowance).forEach(([spender]) => {
-            console.log('Spender');
-            console.log(spender);
+            // console.log('Spender');
+            // console.log(spender);
             allowanceCalls.push({
               allowance: tokenContract.methods.allowance(address, spender),
               spender: spender,
@@ -79,14 +80,14 @@ export function fetchBalances({ address, web3, tokens }) {
           });
         }
       });
-      console.log('Calling Multicall');
-      console.log(balanceCalls);
-      console.log(allowanceCalls);
+      // console.log('Calling Multicall');
+      // console.log(balanceCalls);
+      // console.log(allowanceCalls);
       multicall
-        .all([balanceCalls])
-        .then(([balanceResults]) => {
+        .all([balanceCalls, allowanceCalls])
+        .then(([balanceResults, allowanceResults]) => {
           const newTokens = {};
-          console.log('Multicall');
+          // console.log('Multicall');
 
           balanceResults.forEach(balanceResult => {
             newTokens[balanceResult.symbol] = {
@@ -95,15 +96,15 @@ export function fetchBalances({ address, web3, tokens }) {
             };
           });
 
-          // allowanceResults.forEach(allowanceResult => {
-          //   newTokens[allowanceResult.symbol] = {
-          //     ...newTokens[allowanceResult.symbol],
-          //     allowance: {
-          //       ...newTokens[allowanceResult.symbol].allowance,
-          //       [allowanceResult.spender]: allowanceResult.allowance,
-          //     },
-          //   };
-          // });
+          allowanceResults.forEach(allowanceResult => {
+            newTokens[allowanceResult.symbol] = {
+              ...newTokens[allowanceResult.symbol],
+              allowance: {
+                ...newTokens[allowanceResult.symbol].allowance,
+                [allowanceResult.spender]: allowanceResult.allowance,
+              },
+            };
+          });
 
           dispatch({
             type: VAULT_FETCH_BALANCES_SUCCESS,

@@ -4,7 +4,7 @@ export const arbitrumStakePools = [
   {
     id: 'bifi-eth',
     name: 'BIFI',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'BIFI',
     tokenDecimals: 18,
     tokenAddress: '0x99C409E5f62E4bd2AC142f17caFb6810B8F0BAAE',

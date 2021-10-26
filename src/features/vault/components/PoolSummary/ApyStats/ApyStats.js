@@ -1,16 +1,19 @@
+import { Fade, Tooltip } from '@material-ui/core';
 import React, { memo } from 'react';
+
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-import styles from './styles';
+import LabeledStat from '../LabeledStat/LabeledStat';
 import { formatApy } from '../../../../helpers/format';
 import { isNaN } from '../../../../helpers/bignumber';
-import LabeledStat from '../LabeledStat/LabeledStat';
-import { Fade, Tooltip } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import styles from './styles';
 import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(styles);
 
 const yearlyToDaily = apy => {
+  console.log('Yearly to DAILY');
+  console.log(apy);
   const g = Math.pow(10, Math.log10(apy + 1) / 365) - 1;
 
   if (isNaN(g)) {
@@ -128,7 +131,8 @@ const ApyStats = ({ apy, launchpoolApr, isLoading = false, itemClasses, itemInne
   let needsDailyTooltip = false;
 
   values.totalApy = apy.totalApy;
-
+  console.log('APYSTATS');
+  console.log(apy);
   if ('vaultApr' in apy && apy.vaultApr) {
     needsApyTooltip = true;
     values.vaultApr = apy.vaultApr;

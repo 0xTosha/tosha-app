@@ -1,7 +1,7 @@
 const pastureStyle = theme => ({
   root: {
-    display: 'none',
-    position: 'relative',
+    backgroundColor: '#78b388',
+    position: 'absolute',
     '@media (min-width: 769px)': {
       display: 'block',
     },

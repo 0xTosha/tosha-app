@@ -1,20 +1,20 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
-import Hidden from '@material-ui/core/Hidden';
-import Drawer from '@material-ui/core/Drawer';
-import Menu from '@material-ui/icons/Menu';
 import Close from '@material-ui/icons/Close';
-import WbSunny from '@material-ui/icons/WbSunny';
+import Drawer from '@material-ui/core/Drawer';
+import Hidden from '@material-ui/core/Hidden';
+import IconButton from '@material-ui/core/IconButton';
+import { Link } from 'react-router-dom';
+import Menu from '@material-ui/icons/Menu';
 import NightsStay from '@material-ui/icons/NightsStay';
+import React from 'react';
+import Toolbar from '@material-ui/core/Toolbar';
+import WbSunny from '@material-ui/icons/WbSunny';
 import { getNetworkBuyUrl } from '../../features/helpers/getNetworkData';
+import { makeStyles } from '@material-ui/core/styles';
 import styles from './styles';
+import { useParams } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(styles);
 
@@ -37,11 +37,10 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             <Hidden xsDown>
               <img
                 alt="TOSHA"
-                src={require(`images/logot.png`)}
+                src={require(`images/logowb.png`)}
                 height={'40px'}
                 className={classes.logo}
               />
-              tosha finance
             </Hidden>
             <Hidden smUp>
               <img

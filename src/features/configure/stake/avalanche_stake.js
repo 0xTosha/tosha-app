@@ -16,7 +16,7 @@ export const avalancheStakePools = [
   {
     id: 'bifi-avax',
     name: 'BIFI',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'BIFI',
     tokenDecimals: 18,
     tokenAddress: '0xd6070ae98b8069de6B494332d1A1a81B6179D960',

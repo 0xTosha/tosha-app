@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import { makeStyles } from '@material-ui/core/styles';
+import { useFetchApys, useFetchBalances, useFetchVaultsData } from '../../redux/hooks';
+import { usePoolsTvl, useUserTvl } from '../../hooks/usePoolsTvl';
+
 import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 import Grid from '@material-ui/core/Grid';
-
-import TVLLoader from './TVLLoader/TVLLoader';
 import NetworksToggle from 'components/NetworksToggle/NetworksToggle';
-import { useConnectWallet } from 'features/home/redux/hooks';
-import { useFetchBalances, useFetchVaultsData, useFetchApys } from '../../redux/hooks';
+import TVLLoader from './TVLLoader/TVLLoader';
 import VisiblePools from '../VisiblePools/VisiblePools';
-import styles from './styles';
-import { usePoolsTvl, useUserTvl } from '../../hooks/usePoolsTvl';
 import { formatGlobalTvl } from 'features/helpers/format';
-import { useFetchBifibuyback } from 'features/vault/redux/fetchBifiBuyback';
 import { getNetworkFriendlyName } from '../../../helpers/getNetworkData';
+import { makeStyles } from '@material-ui/core/styles';
+import styles from './styles';
+import { useConnectWallet } from 'features/home/redux/hooks';
+import { useFetchBifibuyback } from 'features/vault/redux/fetchBifiBuyback';
+import { useTranslation } from 'react-i18next';
 
 const FETCH_INTERVAL_MS = 15 * 1000;
 
@@ -37,17 +37,17 @@ export default function Pools() {
     return () => clearInterval(id);
   }, [fetchApys]);
 
-  useEffect(() => {
-    fetchBifibuyback();
-    const id = setInterval(fetchBifibuyback, FETCH_INTERVAL_MS);
-    return () => clearInterval(id);
-  }, [fetchBifibuyback]);
+  // useEffect(() => {
+  //   fetchBifibuyback();
+  //   const id = setInterval(fetchBifibuyback, FETCH_INTERVAL_MS);
+  //   return () => clearInterval(id);
+  // }, [fetchBifibuyback]);
 
   useEffect(() => {
     const fetch = () => {
       if (address && web3 && !fetchBalancesPending) {
-        console.log('WEB3');
-        console.log(web3);
+        // console.log('WEB3');
+        // console.log(web3);
         fetchBalances({ address, web3, tokens });
         console.log('Balances OK!');
       }

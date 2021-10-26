@@ -1,32 +1,33 @@
 import React, { useEffect, useMemo } from 'react';
-import { useSelector } from 'react-redux';
-import Divider from '@material-ui/core/Divider';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import { useTranslation } from 'react-i18next';
-import BigNumber from 'bignumber.js';
-import { useConnectWallet } from '../../../home/redux/hooks';
 import { useFetchApys, useFetchBalances, useFetchVaultsData } from '../../redux/hooks';
-import { byDecimals } from 'features/helpers/bignumber';
-import { formatTvl } from 'features/helpers/format';
-import HomeLink from './HomeLink/HomeLink';
-import PoolActions from '../PoolActions/PoolActions';
-import PoolTitle from '../PoolSummary/PoolTitle/PoolTitle';
-import LabeledStat from '../PoolSummary/LabeledStat/LabeledStat';
-import styles from './styles';
-import { Helmet } from 'react-helmet';
-import { usePageMeta } from '../../../common/getPageMeta';
-import ApyStats from '../PoolSummary/ApyStats/ApyStats';
-import PoolPaused from '../PoolSummary/PoolPaused/PoolPaused';
-import { CakeV2Banner } from './Banners/CakeV2Banner/CakeV2Banner';
-import { launchpools } from '../../../helpers/getNetworkData';
 import {
   useLaunchpoolSubscriptions,
   useLaunchpoolUpdates,
   usePoolApr,
 } from '../../../stake/redux/hooks';
+
+import ApyStats from '../PoolSummary/ApyStats/ApyStats';
+import BigNumber from 'bignumber.js';
+import { CakeV2Banner } from './Banners/CakeV2Banner/CakeV2Banner';
+import Divider from '@material-ui/core/Divider';
+import Grid from '@material-ui/core/Grid';
+import { Helmet } from 'react-helmet';
+import HomeLink from './HomeLink/HomeLink';
+import LabeledStat from '../PoolSummary/LabeledStat/LabeledStat';
+import PoolActions from '../PoolActions/PoolActions';
 import { PoolBoosts } from '../PoolSummary/PoolBoosts/PoolBoosts';
+import PoolPaused from '../PoolSummary/PoolPaused/PoolPaused';
+import PoolTitle from '../PoolSummary/PoolTitle/PoolTitle';
+import { byDecimals } from 'features/helpers/bignumber';
+import { formatTvl } from 'features/helpers/format';
 import { getRetireReason } from '../PoolSummary/RetireReason/RetireReason';
+import { launchpools } from '../../../helpers/getNetworkData';
+import { makeStyles } from '@material-ui/core/styles';
+import styles from './styles';
+import { useConnectWallet } from '../../../home/redux/hooks';
+import { usePageMeta } from '../../../common/getPageMeta';
+import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 

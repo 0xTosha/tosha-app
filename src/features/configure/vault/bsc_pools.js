@@ -1,7 +1,7 @@
 export const bscPools = [
   {
     id: 'bifi-maxi',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     name: 'BIFI Maxi',
     token: 'BIFI',
     tokenDescription: 'tosha.finance',

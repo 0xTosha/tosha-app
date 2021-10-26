@@ -4,7 +4,7 @@ export const fantomStakePools = [
   {
     id: 'bifi-ftm',
     name: 'BIFI',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'BIFI',
     tokenDecimals: 18,
     tokenAddress: '0xd6070ae98b8069de6B494332d1A1a81B6179D960',
@@ -36,7 +36,7 @@ export const fantomStakePools = [
   {
     id: 'moo_bifi-scream',
     name: 'Scream',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'mooFantomBIFI',
     tokenDecimals: 18,
     tokenAddress: '0xbF07093ccd6adFC3dEB259C557b61E94c1F66945',

@@ -31,13 +31,13 @@ const createThemeMode = isNightMode =>
     overrides: {
       MuiButton: {
         label: {
-          color: isNightMode ? '#fff' : '#000',
+          color: isNightMode ? '#fff' : '#EE782C',
         },
       },
       // for dropdown menu items
       MuiButtonBase: {
         root: {
-          color: isNightMode ? '#fff' : '#000',
+          color: isNightMode ? '#fff' : '#EE782C',
         },
       },
       MuiCheckbox: {

@@ -1,14 +1,16 @@
-import axios from 'axios';
-import { useCallback } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
   VAULT_FETCH_APYS_BEGIN,
-  VAULT_FETCH_APYS_SUCCESS,
   VAULT_FETCH_APYS_FAILURE,
+  VAULT_FETCH_APYS_SUCCESS,
 } from './constants';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+
+import axios from 'axios';
 import { getApiCacheBuster } from '../../web3/getApiCacheBuster';
+import { useCallback } from 'react';
 
 export function fetchApys() {
+  console.log('Fetching APY');
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_APYS_BEGIN,
@@ -20,6 +22,8 @@ export function fetchApys() {
 
       doRequest.then(
         res => {
+          console.log('Fetching APY OK!');
+          console.log(res);
           dispatch({
             type: VAULT_FETCH_APYS_SUCCESS,
             data: res.data,

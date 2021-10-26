@@ -4,7 +4,7 @@ export const polygonStakePools = [
   {
     id: 'bifi-polygon',
     name: 'BIFI',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'BIFI',
     tokenDecimals: 18,
     tokenAddress: '0xFbdd194376de19a88118e84E279b977f165d01b8',
@@ -175,7 +175,7 @@ Sandman Finance was the first project to present the swap/utility token. Where y
   {
     id: 'moo_bifi-yieldwatch',
     name: 'Yieldwatch',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'mooPolygonBIFI',
     tokenDecimals: 18,
     tokenAddress: '0xfEcf784F48125ccb7d8855cdda7C5ED6b5024Cb3',
@@ -208,7 +208,7 @@ Sandman Finance was the first project to present the swap/utility token. Where y
   {
     id: 'moo_bifi-pearzap',
     name: 'PearZap',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'mooPolygonBIFI',
     tokenDecimals: 18,
     tokenAddress: '0xfEcf784F48125ccb7d8855cdda7C5ED6b5024Cb3',
@@ -241,7 +241,7 @@ Sandman Finance was the first project to present the swap/utility token. Where y
   {
     id: 'moo_bifi-polypup',
     name: 'PolyPup',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'mooPolygonBIFI',
     tokenDecimals: 18,
     tokenAddress: '0xfEcf784F48125ccb7d8855cdda7C5ED6b5024Cb3',
@@ -274,7 +274,7 @@ Sandman Finance was the first project to present the swap/utility token. Where y
   {
     id: 'moo_bifi-polyfarm',
     name: 'PolygonFarm',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'mooPolygonBIFI',
     tokenDecimals: 18,
     tokenAddress: '0xfEcf784F48125ccb7d8855cdda7C5ED6b5024Cb3',
@@ -307,7 +307,7 @@ Sandman Finance was the first project to present the swap/utility token. Where y
   {
     id: 'moo_bifi-lithium',
     name: 'PolyWantsACracker',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'mooPolygonBIFI',
     tokenDecimals: 18,
     tokenAddress: '0xfEcf784F48125ccb7d8855cdda7C5ED6b5024Cb3',

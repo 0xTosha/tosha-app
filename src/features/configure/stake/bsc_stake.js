@@ -15,7 +15,7 @@ export const bscStakePools = [
   {
     id: 'bifi-bnb',
     name: 'BIFI',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'BIFI',
     tokenDecimals: 18,
     tokenAddress: '0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
@@ -330,7 +330,7 @@ export const bscStakePools = [
   {
     id: 'moo_bifi-elk',
     name: 'Elk',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'mooBIFI',
     tokenDecimals: 18,
     tokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
@@ -462,7 +462,7 @@ export const bscStakePools = [
   {
     id: 'moo_bifi-bhc',
     name: 'Billionhappiness',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'mooBIFI',
     tokenDecimals: 18,
     tokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
@@ -594,7 +594,7 @@ export const bscStakePools = [
   {
     id: 'moo_bifi-honeyfarm',
     name: 'HoneyFarm',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'mooBIFI',
     tokenDecimals: 18,
     tokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
@@ -660,7 +660,7 @@ export const bscStakePools = [
   {
     id: 'moo_bifi-moonpot',
     name: 'Moonpot',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'mooBIFI',
     tokenDecimals: 18,
     tokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
@@ -693,7 +693,7 @@ export const bscStakePools = [
   {
     id: 'moo_bifi-honeyfarm2',
     name: 'HoneyFarm',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'mooBIFI',
     tokenDecimals: 18,
     tokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
@@ -759,7 +759,7 @@ export const bscStakePools = [
   {
     id: 'moo_bifi-farmhero',
     name: 'FarmHero',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'mooBIFI',
     tokenDecimals: 18,
     tokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
@@ -792,7 +792,7 @@ export const bscStakePools = [
   {
     id: 'moo_bifi-fruits',
     name: 'Fruit',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'mooBIFI',
     tokenDecimals: 18,
     tokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
@@ -1091,7 +1091,7 @@ export const bscStakePools = [
   {
     id: 'moo_dumpling-sdump',
     name: 'DumplingSwap',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'mooBIFI',
     tokenDecimals: 18,
     tokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
@@ -1526,7 +1526,7 @@ export const bscStakePools = [
   {
     id: 'moo_bifi-biti',
     name: 'BitiCity',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'mooBIFI',
     tokenDecimals: 18,
     tokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',

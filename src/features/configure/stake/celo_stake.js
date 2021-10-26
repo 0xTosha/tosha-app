@@ -16,7 +16,7 @@ export const celoStakePools = [
   {
     id: 'bifi-celo',
     name: 'TOSHA',
-    logo: 'single-assets/BIFI.png',
+    logo: 'single-assets/Tosha.png',
     token: 'TOSHA',
     tokenDecimals: 18,
     tokenAddress: '0xE1Ea3fc4413e143AF108973342d76080622E66c4',

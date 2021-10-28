@@ -67,6 +67,8 @@ export function useFetchApys() {
 }
 
 export function reducer(state, action) {
+  console.log('----------------REDUCER-------------------');
+  console.log(action);
   switch (action.type) {
     case VAULT_FETCH_APYS_BEGIN:
       return {
@@ -75,6 +77,8 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_APYS_SUCCESS:
+      console.log('----------------FETCH API>>>>>>>>>>>-------------------');
+      console.log(action.data);
       return {
         ...state,
         apys: action.data,

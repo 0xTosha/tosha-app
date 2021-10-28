@@ -33,6 +33,8 @@ export default function Pools() {
 
   useEffect(() => {
     fetchApys();
+    console.log('APYS');
+    console.log(apys);
     const id = setInterval(fetchApys, FETCH_INTERVAL_MS);
     return () => clearInterval(id);
   }, [fetchApys]);
@@ -49,15 +51,12 @@ export default function Pools() {
         // console.log('WEB3');
         // console.log(web3);
         fetchBalances({ address, web3, tokens });
-        console.log('Balances OK!');
       }
       if (!fetchVaultsDataPending) {
-        console.log('Fetching Vault Data');
         fetchVaultsData({ web3, pools });
       }
     };
     fetch();
-    console.log('FETCHNIG....Ethe');
     const id = setInterval(fetch, FETCH_INTERVAL_MS);
     return () => clearInterval(id);
 

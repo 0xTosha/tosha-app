@@ -112,6 +112,8 @@ const PoolDetails = ({ vaultId }) => {
 
   const balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
   const sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
+  console.log('POOL ID>>>>>>>>>>>>>>>>>>>>>>');
+  console.log(pool.id);
   const apy = apys[pool.id] || { totalApy: 0 };
 
   const balanceUsd =
@@ -154,6 +156,7 @@ const PoolDetails = ({ vaultId }) => {
       <HomeLink />
       {vaultId === 'cake-cakev2' ? <CakeV2Banner /> : ''}
       <div className={classes.container}>
+        hello
         <Grid container alignItems="center" style={{ paddingTop: '20px' }}>
           {vaultStateTitle}
           <PoolBoosts poolName={pool.name} earnedTokenAddress={pool.earnedTokenAddress} />

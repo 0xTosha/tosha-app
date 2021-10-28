@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
 const useVisiblePools = (pools, chunk) => {
+  console.log('VISIBLE POOLS>>>>>>>>>>>');
+  console.log(pools);
   const [visibleCount, setVisibleCount] = useState(chunk);
 
   let visiblePools = pools.slice(0, visibleCount);

@@ -21,7 +21,7 @@ export const celoStakePools = [
     tokenDecimals: 18,
     tokenAddress: '0xE1Ea3fc4413e143AF108973342d76080622E66c4',
     tokenOracle: 'tokens',
-    tokenOracleId: 'BIFI',
+    tokenOracleId: 'TOSHA',
     earnedToken: 'CELO',
     earnedTokenDecimals: 18,
     earnedTokenAddress: '0x021F09399fE684135D3eA96506075b175E822967',

@@ -1,20 +1,17 @@
-import React from 'react';
-
+import Filters from '../Filters/Filters';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { useTranslation } from 'react-i18next';
+import Pool from '../Pool/Pool';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from './styles';
-
 import useFilteredPools from '../../hooks/useFilteredPools';
+import { useLaunchpoolUpdates } from '../../../stake/redux/hooks';
+import usePoolsByAsset from '../../hooks/usePoolsByAsset';
 import usePoolsByPlatform from '../../hooks/usePoolsByPlatform';
 import usePoolsByVaultType from '../../hooks/usePoolsByVaultType';
-import usePoolsByAsset from '../../hooks/usePoolsByAsset';
 import useSortedPools from '../../hooks/useSortedPools';
+import { useTranslation } from 'react-i18next';
 import useVisiblePools from '../../hooks/useVisiblePools';
-
-import Pool from '../Pool/Pool';
-import Filters from '../Filters/Filters';
-import { useLaunchpoolUpdates } from '../../../stake/redux/hooks';
 
 const useStyles = makeStyles(styles);
 
@@ -59,7 +56,7 @@ const VisiblePools = ({
               pool={pool}
               index={index}
               tokens={tokens}
-              apy={apys[pool.id] || { totalApy: 0 }}
+              apy={apys[pool.id] || { totalApy: 223 }}
               key={pool.id}
               fetchBalancesDone={fetchBalancesDone}
               fetchApysDone={fetchApysDone}

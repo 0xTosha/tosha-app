@@ -1,6 +1,6 @@
-import axios from 'axios';
-
 import { getNetworkPools, launchpools } from '../helpers/getNetworkData';
+
+import axios from 'axios';
 import { getApiCacheBuster } from './getApiCacheBuster';
 
 const pools = getNetworkPools();
@@ -75,7 +75,9 @@ export function initializePriceCache() {
     }
     oracleToIds.get(pool.oracle).push(pool.oracleId);
   });
-
+  console.log('initializePriceCache');
+  console.log(oracleEndpoints);
+  console.log(oracleToIds);
   // BIFI should always be fetched
   if (!oracleToIds.has('tokens')) {
     oracleToIds.set('tokens', []);

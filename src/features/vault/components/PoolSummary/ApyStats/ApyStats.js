@@ -12,8 +12,6 @@ import { useTranslation } from 'react-i18next';
 const useStyles = makeStyles(styles);
 
 const yearlyToDaily = apy => {
-  console.log('Yearly to DAILY');
-  console.log(apy);
   const g = Math.pow(10, Math.log10(apy + 1) / 365) - 1;
 
   if (isNaN(g)) {

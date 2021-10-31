@@ -45,7 +45,7 @@ export function fetchVaultsData({ web3, pools }) {
       ])
         .then(data => {
           // console.log('THEN');
-          // console.log(data);
+          console.log('fetching ORACLE PRICE');
           const newPools = pools.map((pool, i) => {
             const pricePerFullShare = byDecimals(data[0][i].pricePerFullShare, 18).toNumber();
             return {

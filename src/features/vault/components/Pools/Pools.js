@@ -28,13 +28,13 @@ export default function Pools() {
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
   const { bifibuyback, fetchBifibuyback, fetchBifibuybackDone } = useFetchBifibuyback();
   const { poolsTvl } = usePoolsTvl(pools);
+  console.log('POOOOOOOOOOOOLSTVL');
+  console.log(pools);
   const { userTvl } = useUserTvl(pools, tokens);
   const classes = useStyles();
 
   useEffect(() => {
     fetchApys();
-    console.log('APYS');
-    console.log(apys);
     const id = setInterval(fetchApys, FETCH_INTERVAL_MS);
     return () => clearInterval(id);
   }, [fetchApys]);
@@ -75,18 +75,20 @@ export default function Pools() {
   return (
     <Grid container className={classes.container}>
       <Grid item xs={6}>
-        <h1 className={classes.title}>{t('Vault-Network')}</h1>
-        <NetworksToggle />
+        {/* <h1 className={classes.title}>{t('Vault-Network')}</h1>
+        <NetworksToggle /> */}
         {fetchVaultsDataDone && activePoolCount && (
           <>
-            <span className={classes.text}>{`${activePoolCount} ${t('Vault-MainTitle')}`}</span>
+            <span className={classes.text}>{`Smart ${t(
+              'Vault-MainTitle'
+            )} (${activePoolCount})`}</span>
           </>
         )}
       </Grid>
       <Grid item xs={6}>
         <div className={classes.tvl}>
           <span className={classes.title}>
-            TVL{' '}
+            TVL {poolsTvl}
             {fetchVaultsDataDone && poolsTvl > 0 ? (
               formatGlobalTvl(poolsTvl)
             ) : (

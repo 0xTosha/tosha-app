@@ -1,19 +1,20 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
-import { makeStyles, ThemeProvider, StylesProvider } from '@material-ui/core/styles';
+import { StylesProvider, ThemeProvider, makeStyles } from '@material-ui/core/styles';
+import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
+
+import Footer from 'components/Footer/Footer';
 import Header from 'components/Header/Header';
 import HeaderLinks from 'components/HeaderLinks/HeaderLinks';
-import { useTranslation } from 'react-i18next';
-import { SnackbarProvider } from 'notistack';
-import { Notifier } from 'features/common';
-import Footer from 'components/Footer/Footer';
-import Pastures from 'components/Pastures/Pastures';
 import { NetworkConnectNotice } from 'components/NetworkConnectNotice/NetworkConnectNotice';
+import { Notifier } from 'features/common';
+import Pastures from 'components/Pastures/Pastures';
+import { SnackbarProvider } from 'notistack';
 import appStyle from './jss/appStyle.js';
-import { createWeb3Modal } from '../web3';
-import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
-import useNightMode from './hooks/useNightMode';
 import createThemeMode from './jss/appTheme';
+import { createWeb3Modal } from '../web3';
 import { useLocation } from 'react-router';
+import useNightMode from './hooks/useNightMode';
+import { useTranslation } from 'react-i18next';
 
 const themes = { light: null, dark: null };
 const getTheme = mode => {

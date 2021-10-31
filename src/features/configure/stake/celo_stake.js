@@ -28,7 +28,7 @@ export const celoStakePools = [
     earnContractAddress: '0x021F09399fE684135D3eA96506075b175E822967',
     earnContractAbi: govPoolABI,
     earnedOracle: 'tokens',
-    earnedOracleId: 'WAVAX',
+    earnedOracleId: 'TOSHALP',
     partnership: false,
     status: 'active',
     fixedStatus: true,

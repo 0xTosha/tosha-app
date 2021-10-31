@@ -10,8 +10,8 @@ const styles = theme => ({
     padding: '12px',
     borderRadius: '0',
     background: theme.palette.background.secondary,
-    marginBottom: '2rem',
-    fontWeight: 900,
+    marginBottom: '1rem',
+    fontWeight: 600,
     color: theme.palette.text.primary,
   },
 });

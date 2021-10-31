@@ -1,19 +1,20 @@
 import React, { useCallback, useMemo } from 'react';
+
 import AccordionSummary from '@material-ui/core/AccordionSummary';
-import Grid from '@material-ui/core/Grid';
-import { useTranslation } from 'react-i18next';
+import ApyStats from './ApyStats/ApyStats';
 import BigNumber from 'bignumber.js';
-import { makeStyles } from '@material-ui/core/styles';
-import { formatTvl } from 'features/helpers/format';
-import { byDecimals } from 'features/helpers/bignumber';
-import styles from './styles';
+import Grid from '@material-ui/core/Grid';
+import LabeledStat from './LabeledStat/LabeledStat';
+import { PoolBoosts } from './PoolBoosts/PoolBoosts';
 import PoolPaused from './PoolPaused/PoolPaused';
 import PoolTitle from './PoolTitle/PoolTitle';
-import LabeledStat from './LabeledStat/LabeledStat';
-import ApyStats from './ApyStats/ApyStats';
-import { usePoolApr } from '../../../stake/redux/subscription';
-import { PoolBoosts } from './PoolBoosts/PoolBoosts';
+import { byDecimals } from 'features/helpers/bignumber';
+import { formatTvl } from 'features/helpers/format';
 import { getRetireReason } from './RetireReason/RetireReason';
+import { makeStyles } from '@material-ui/core/styles';
+import styles from './styles';
+import { usePoolApr } from '../../../stake/redux/subscription';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(styles);
 
@@ -62,6 +63,8 @@ const PoolSummary = ({
 
   const balanceUsd =
     balanceSingle > 0 && fetchVaultsDataDone ? formatTvl(balanceSingle, pool.oraclePrice) : '';
+  console.log('##############PRICE IN USD');
+  console.log(pool);
   const deposited = byDecimals(
     sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)),
     pool.tokenDecimals

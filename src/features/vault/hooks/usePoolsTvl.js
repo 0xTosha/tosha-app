@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react';
+
 import BigNumber from 'bignumber.js';
-import { useState, useEffect } from 'react';
 import { byDecimals } from '../../helpers/bignumber';
 
 const usePoolsTvl = pools => {
@@ -7,7 +8,8 @@ const usePoolsTvl = pools => {
 
   useEffect(() => {
     let globalTvl = 0;
-
+    console.log('usePoolsTVL');
+    console.log(pools);
     pools
       .filter(p => p.status === 'active')
       .filter(isUniqueEarnContract)

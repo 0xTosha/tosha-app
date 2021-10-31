@@ -2,7 +2,7 @@ export const celoPools = [
   {
     id: 'TOSHA',
     logo: 'single-assets/Tosha.png',
-    name: 'TOSHA Maxi',
+    name: 'TOSHA London',
     token: 'TOSHA',
     tokenDescription: 'Tosha',
     tokenAddress: '0xE1Ea3fc4413e143AF108973342d76080622E66c4',

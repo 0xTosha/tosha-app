@@ -28,7 +28,9 @@ export const formatTvl = (tvl, oraclePrice, useOrder = true) => {
   if (oraclePrice) {
     tvl = BigNumber(tvl).times(oraclePrice).toFixed(2);
   }
-
+  console.log('formatTVL');
+  console.log(tvl);
+  console.log(oraclePrice);
   let order = Math.floor(Math.log10(tvl) / 3);
   if (order < 0 || useOrder === false) {
     order = 0;

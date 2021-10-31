@@ -32,6 +32,8 @@ const Pool = ({
   const { subscribe } = useLaunchpoolSubscriptions();
   const balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
   const sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
+  console.log('*******************');
+  console.log(balanceSingle);
   const launchpoolId = useSelector(state => state.vault.vaultLaunchpool[pool.id]);
   const launchpool = launchpoolId ? launchpools[launchpoolId] : null;
   const activeLaunchpools = useSelector(state => state.vault.vaultLaunchpools[pool.id]);

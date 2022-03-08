@@ -1,35 +1,36 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useMemo, useEffect } from 'react';
-import useDeepCompareEffect from 'use-deep-compare-effect';
-import Grid from '@material-ui/core/Grid';
-import BigNumber from 'bignumber.js';
-import { makeStyles } from '@material-ui/core/styles';
-import { useTranslation } from 'react-i18next';
-import { useSnackbar } from 'notistack';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import CircularProgress from '@material-ui/core/CircularProgress';
 
-import Button from 'components/CustomButtons/Button.js';
-import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
-import CustomSlider from 'components/CustomSlider/CustomSlider';
-import RefundButtons from '../RefundButtons/RefundButtons';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   byDecimals,
-  convertAmountToRawNumber,
   convertAmountFromRawNumber,
+  convertAmountToRawNumber,
 } from 'features/helpers/bignumber';
-import { shouldHideFromHarvest } from 'features/helpers/utils';
 import {
-  useFetchWithdraw,
-  useFetchBalances,
   useFetchApproval,
+  useFetchBalances,
+  useFetchWithdraw,
   useFetchZapEstimate,
 } from 'features/vault/redux/hooks';
-import { useConnectWallet } from 'features/home/redux/hooks';
+
+import BigNumber from 'bignumber.js';
+import Button from 'components/CustomButtons/Button.js';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
+import CustomSlider from 'components/CustomSlider/CustomSlider';
+import FormControl from '@material-ui/core/FormControl';
+import Grid from '@material-ui/core/Grid';
+import MenuItem from '@material-ui/core/MenuItem';
+import RefundButtons from '../RefundButtons/RefundButtons';
+import Select from '@material-ui/core/Select';
 import { getNetworkCoin } from 'features/helpers/getNetworkData';
+import { makeStyles } from '@material-ui/core/styles';
+import { shouldHideFromHarvest } from 'features/helpers/utils';
 import styles from './styles';
+import { useConnectWallet } from 'features/home/redux/hooks';
+import useDeepCompareEffect from 'use-deep-compare-effect';
+import { useSnackbar } from 'notistack';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(styles);
 const nativeCoin = getNetworkCoin();

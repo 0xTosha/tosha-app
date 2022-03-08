@@ -1,12 +1,13 @@
-import axios from 'axios';
-import { useCallback } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
   VAULT_FETCH_APYS_BEGIN,
-  VAULT_FETCH_APYS_SUCCESS,
   VAULT_FETCH_APYS_FAILURE,
+  VAULT_FETCH_APYS_SUCCESS,
 } from './constants';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+
+import axios from 'axios';
 import { getApiCacheBuster } from '../../web3/getApiCacheBuster';
+import { useCallback } from 'react';
 
 export function fetchApys() {
   return dispatch => {
@@ -16,7 +17,7 @@ export function fetchApys() {
 
     return new Promise((resolve, reject) => {
       const cacheBuster = getApiCacheBuster();
-      const doRequest = axios.get(`https://api.beefy.finance/apy/breakdown?_=${cacheBuster}`);
+      const doRequest = axios.get(`http://localhost:3005/apy/breakdown?_=${cacheBuster}`);
 
       doRequest.then(
         res => {

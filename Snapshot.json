@@ -1,0 +1,30 @@
+{
+  "name": "TOSHA",
+  "skin": "indexed",
+  "about": "",
+  "admins": ["0xaa8b6b3b7cAF1dE5460d4fc0Aa469d60Bf30E051"],
+  "avatar": "https://pbs.twimg.com/profile_images/1455289784339943426/TWJNNYFs_400x400.jpg",
+  "github": "0xtosha",
+  "symbol": "TOSHA",
+  "filters": {
+    "minScore": 1,
+    "onlyMembers": false
+  },
+  "members": [],
+  "network": "1",
+  "plugins": {},
+  "twitter": "0xtosha",
+  "strategies": [
+    {
+      "name": "erc721",
+      "params": {
+        "symbol": "TOSHA",
+        "address": "0x45Ae3d1814e73953e091BD99EB6232C6cB3e0ca4"
+      }
+    }
+  ],
+  "validation": {
+    "name": "basic",
+    "params": {}
+  }
+}

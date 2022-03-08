@@ -1,12 +1,13 @@
-import axios from 'axios';
-import { useCallback } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
   VAULT_FETCH_BIFIBUYBACK_BEGIN,
-  VAULT_FETCH_BIFIBUYBACK_SUCCESS,
   VAULT_FETCH_BIFIBUYBACK_FAILURE,
+  VAULT_FETCH_BIFIBUYBACK_SUCCESS,
 } from './constants';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+
+import axios from 'axios';
 import { getApiCacheBuster } from '../../web3/getApiCacheBuster';
+import { useCallback } from 'react';
 
 export function fetchBifibuyback() {
   return dispatch => {
@@ -16,7 +17,7 @@ export function fetchBifibuyback() {
 
     return new Promise((resolve, reject) => {
       const cacheBuster = getApiCacheBuster();
-      const doRequest = axios.get(`https://api.beefy.finance/bifibuyback?_=${cacheBuster}`);
+      const doRequest = axios.get(`http://localhost:3005/bifibuyback?_=${cacheBuster}`);
 
       doRequest.then(
         res => {

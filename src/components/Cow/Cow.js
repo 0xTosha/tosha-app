@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Cow = ({ total, index }) => {
   const [dimensions, setDimensions] = useState(null);
@@ -18,7 +18,7 @@ const Cow = ({ total, index }) => {
   return (
     <img
       alt="cow"
-      src={require('assets/img/beefy.svg')}
+      src={require('assets/img/Tosha.png')}
       style={{
         position: 'absolute',
         bottom: `${dimensions.y}rem`,

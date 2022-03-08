@@ -1,52 +1,53 @@
-import { connectors } from 'web3modal';
-import { indexBy } from './utils';
-import WalletConnectProvider from '@walletconnect/web3-provider';
-import { DeFiConnector } from 'deficonnect';
-import WalletLink from 'walletlink';
-import { allNetworks } from '../../network';
 import {
-  avalanchePools,
-  avalancheStakePools,
-  avaxAddressBook,
-  avalancheZaps,
-  bscPools,
-  bscStakePools,
-  bscAddressBook,
-  bscZaps,
-  fantomPools,
-  fantomStakePools,
-  fantomAddressBook,
-  fantomZaps,
-  hecoPools,
-  hecoStakePools,
-  hecoAddressBook,
-  hecoZaps,
-  nativeCoins,
-  polygonPools,
-  polygonStakePools,
-  polygonAddressBook,
-  polygonZaps,
-  celoPools,
-  celoStakePools,
-  celoAddressBook,
-  celoZaps,
-  moonriverPools,
-  moonriverStakePools,
-  moonriverAddressBook,
-  moonriverZaps,
-  harmonyPools,
-  harmonyStakePools,
-  harmonyAddressBook,
-  harmonyZaps,
-  cronosPools,
-  cronosStakePools,
-  cronosAddressBook,
-  cronosZaps,
+  arbitrumAddressBook,
   arbitrumPools,
   arbitrumStakePools,
-  arbitrumAddressBook,
   arbitrumZaps,
+  avalanchePools,
+  avalancheStakePools,
+  avalancheZaps,
+  avaxAddressBook,
+  bscAddressBook,
+  bscPools,
+  bscStakePools,
+  bscZaps,
+  celoAddressBook,
+  celoPools,
+  celoStakePools,
+  celoZaps,
+  cronosAddressBook,
+  cronosPools,
+  cronosStakePools,
+  cronosZaps,
+  fantomAddressBook,
+  fantomPools,
+  fantomStakePools,
+  fantomZaps,
+  harmonyAddressBook,
+  harmonyPools,
+  harmonyStakePools,
+  harmonyZaps,
+  hecoAddressBook,
+  hecoPools,
+  hecoStakePools,
+  hecoZaps,
+  moonriverAddressBook,
+  moonriverPools,
+  moonriverStakePools,
+  moonriverZaps,
+  nativeCoins,
+  polygonAddressBook,
+  polygonPools,
+  polygonStakePools,
+  polygonZaps,
 } from '../configure';
+
+import { DeFiConnector } from 'deficonnect';
+import WalletConnectProvider from '@walletconnect/web3-provider';
+import WalletLink from 'walletlink';
+import { allNetworks } from '../../network';
+import { connectors } from 'web3modal';
+import { indexBy } from './utils';
 
 export const appNetworkId = window.REACT_APP_NETWORK_ID;
 
@@ -467,7 +468,7 @@ export const getNetworkConnectors = t => {
               description: t('Connect to your Coinbase Wallet'),
             },
             options: {
-              appName: 'Beefy Finance',
+              appName: 'Tosha | Smart Vaults',
               appLogoUrl: 'https://app.beefy.finance/static/media/BIFI.e797b2e4.png',
               darkMode: false,
             },

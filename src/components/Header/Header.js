@@ -1,25 +1,25 @@
-import React, { memo, useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
-import Hidden from '@material-ui/core/Hidden';
-import Drawer from '@material-ui/core/Drawer';
-import Menu from '@material-ui/icons/Menu';
-import Close from '@material-ui/icons/Close';
-import WbSunny from '@material-ui/icons/WbSunny';
-import NightsStay from '@material-ui/icons/NightsStay';
-import { getNetworkBuyUrl } from '../../features/helpers/getNetworkData';
 import { Dialog, withStyles } from '@material-ui/core';
+import React, { memo, useCallback, useState } from 'react';
+
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import Close from '@material-ui/icons/Close';
 import CustomButton from '../../components/CustomButtons/Button';
+import Drawer from '@material-ui/core/Drawer';
+import Hidden from '@material-ui/core/Hidden';
+import IconButton from '@material-ui/core/IconButton';
+import { Link } from 'react-router-dom';
+import Menu from '@material-ui/icons/Menu';
+import NightsStay from '@material-ui/icons/NightsStay';
+import Toolbar from '@material-ui/core/Toolbar';
+import WbSunny from '@material-ui/icons/WbSunny';
+import { getNetworkBuyUrl } from '../../features/helpers/getNetworkData';
+import { makeStyles } from '@material-ui/core/styles';
 import styles from './styles';
+import { useParams } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(styles);
-
 const StyledDialog = withStyles(theme => ({
   paper: {
     margin: '16px',
@@ -47,37 +47,55 @@ const Header = ({ links, isNightMode, setNightMode }) => {
         <Link to={`/${chain}`}>
           <Button className={classes.title}>
             <Hidden xsDown>
-              <img
-                alt="BIFI"
-                src={require(`images/BIFI-logo.svg`)}
-                height={'40px'}
-                className={classes.logo}
-              />
-              beefy.finance
+              {isNightMode ? (
+                <img
+                  alt="TOSHA"
+                  src={require(`images/tosha-logodb.png`)}
+                  height={'40px'}
+                  className={classes.logo}
+                />
+              ) : (
+                <img
+                  alt="TOSHA"
+                  src={require(`images/tosha-logowb.png`)}
+                  height={'40px'}
+                  className={classes.logo}
+                />
+              )}
             </Hidden>
+
             <Hidden smUp>
-              <img
-                alt="BIFI"
-                src={require(`images/BIFI-logo.svg`)}
-                height={'35px'}
-                className={classes.logo}
-              />
+              {isNightMode ? (
+                <img
+                  alt="TOSHA"
+                  src={require(`images/tosha-logodb.png`)}
+                  height={'35px'}
+                  className={classes.logo}
+                />
+              ) : (
+                <img
+                  alt="TOSHA"
+                  src={require(`images/tosha-logowb.png`)}
+                  height={'35px'}
+                  className={classes.logo}
+                />
+              )}
             </Hidden>
           </Button>
         </Link>
 
         <div className={classes.middleNav}>
-          <Hidden smDown>
+          {/* <Hidden smDown>
             {renderLink('vote', t('vote'), 'vote-yea', classes)}
             {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
             {renderLink('docs', t('docs'), 'book', classes)}
             {renderLink('blog', t('blog'), 'file-alt', classes)}
             <InsureLink t={t} classes={classes} />
-          </Hidden>
-          {renderLink('buy', t('buy'), 'dollar-sign', classes)}
+          </Hidden> */}
+          {/* {renderLink('buy', t('buy'), 'dollar-sign', classes)}
           <Link className={classes.btnBoost} to={`/${chain}/stake`}>
             <img alt="Boost" src={require('images/stake/boost.svg')} />
-          </Link>
+          </Link> */}
         </div>
 
         <Hidden smDown implementation="css">
@@ -94,7 +112,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
         </Hidden>
       </Toolbar>
 
-      <Hidden mdUp implementation="js">
+      {/* <Hidden mdUp implementation="js">
         <Drawer
           variant="temporary"
           anchor={'right'}
@@ -126,7 +144,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             </IconButton>
           </div>
         </Drawer>
-      </Hidden>
+      </Hidden> */}
     </AppBar>
   );
 };
@@ -211,7 +229,7 @@ const LinkSidebar = ({ name, label, icon, classes }) => (
 );
 
 const getLinkUrl = name => {
-  return name === 'buy' ? getNetworkBuyUrl() : `https://${name}.beefy.finance`;
+  return name === 'buy' ? getNetworkBuyUrl() : `https://${name}.tosha.io`;
 };
 
 export default Header;

@@ -4,9 +4,9 @@ const styles = theme => ({
     flexDirection: 'row',
     justifyContent: 'space-around',
     maxWidth: '40rem',
-    margin: '2rem auto',
+    margin: '1rem auto',
     '@media (min-width: 769px)': {
-      margin: '2rem auto 10rem',
+      margin: '2rem auto 2rem',
     },
   },
   column: {
@@ -17,7 +17,7 @@ const styles = theme => ({
     color: theme.palette.text.primary,
     fontWeight: 900,
     fontSize: '1.2rem',
-    marginBottom: '0.5rem',
+    marginBottom: '0.1rem',
   },
   link: {
     margin: '0.5rem 0',

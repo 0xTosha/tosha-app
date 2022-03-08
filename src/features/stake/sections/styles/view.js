@@ -40,7 +40,7 @@ const styles = theme => ({
       margin: '0 auto',
     },
     '& > .MuiGrid-item': {
-      paddingBottom: '20px',
+      paddingBottom: '10px',
     },
   },
 

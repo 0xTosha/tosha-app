@@ -1,11 +1,12 @@
+import { Fade, Tooltip } from '@material-ui/core';
 import React, { memo } from 'react';
+
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-import styles from './styles';
+import LabeledStat from '../LabeledStat/LabeledStat';
 import { formatApy } from '../../../../helpers/format';
 import { isNaN } from '../../../../helpers/bignumber';
-import LabeledStat from '../LabeledStat/LabeledStat';
-import { Fade, Tooltip } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import styles from './styles';
 import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(styles);
@@ -48,6 +49,13 @@ const YearlyBreakdownTooltip = memo(({ rates }) => {
     });
   }
 
+  if ('toshaApr' in rates) {
+    rows.push({
+      label: 'TOSHA APR',
+      value: rates.toshaApr,
+    });
+  }
+
   if ('tradingApr' in rates) {
     rows.push({
       label: t('Vault-Breakdown-TradingApr'),
@@ -73,6 +81,12 @@ const DailyBreakdownTooltip = memo(({ rates }) => {
     rows.push({
       label: t('Vault-Breakdown-VaultDaily'),
       value: rates.vaultDaily,
+    });
+  }
+  if ('toshaDailyApr' in rates) {
+    rows.push({
+      label: 'Tosha Daily',
+      value: rates.toshaDailyApr,
     });
   }
 
@@ -133,6 +147,12 @@ const ApyStats = ({ apy, launchpoolApr, isLoading = false, itemClasses, itemInne
     needsApyTooltip = true;
     values.vaultApr = apy.vaultApr;
     values.vaultDaily = apy.vaultApr / 365;
+  }
+  if ('toshaApy' in apy && apy.toshaApy) {
+    needsApyTooltip = true;
+    values.toshaApy = apy.toshaApy;
+    values.toshaApr = apy.toshaApr;
+    values.toshaDailyApr = apy.toshaApr / 365;
   }
 
   if ('tradingApr' in apy && apy.tradingApr) {

@@ -1,16 +1,23 @@
 // To run: yarn validate
-import { MultiCall } from 'eth-multicall';
-import { addressBook } from 'blockchain-addressbook';
-import Web3 from 'web3';
-import BigNumber from 'bignumber.js';
 
-import { isEmpty } from '../src/features/helpers/utils.js';
-import { isValidChecksumAddress, maybeChecksumAddress } from './utils.js';
-import { vaultABI, strategyABI } from '../src/features/configure/abi.js';
 import { chainPools, chainRpcs } from './config.js';
+import { isValidChecksumAddress, maybeChecksumAddress } from './utils.js';
+import { strategyABI, vaultABI } from '../src/features/configure/abi.js';
+
+import BigNumber from 'bignumber.js';
+import { MultiCall } from 'eth-multicall';
+import Web3 from 'web3';
+import { addressBook } from '@0xtosha/blockchain-addressbook';
+import { isEmpty } from '../src/features/helpers/utils.js';
 
 const overrides = {
   'bunny-bunny-eol': { keeper: undefined, stratOwner: undefined },
+  'celo-orange-maxi': { keeper: undefined, stratOwner: undefined }, // TODO:
+  'sushi-celo-cusd-usdc': {
+    keeper: undefined,
+    stratOwner: undefined,
+    beefyFeeRecipient: undefined,
+  }, // TODO:
   'blizzard-xblzd-bnb-old-eol': { keeper: undefined },
   'blizzard-xblzd-busd-old-eol': { keeper: undefined },
   'heco-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
@@ -137,7 +144,7 @@ const validatePools = async () => {
       uniqueOracleId.add(pool.oracleId);
 
       const { keeper, strategyOwner, vaultOwner, beefyFeeRecipient } =
-        addressBook[chain].platforms.beefyfinance;
+        addressBook[chain].platforms.toshafinance;
 
       updates = isKeeperCorrect(pool, chain, keeper, updates);
       updates = isStratOwnerCorrect(pool, chain, strategyOwner, updates);
@@ -250,7 +257,7 @@ const isBeefyFeeRecipientCorrect = (pool, chain, recipient, updates) => {
 // Helpers to populate required addresses.
 
 const populateVaultsData = async (chain, pools, web3) => {
-  const multicall = new MultiCall(web3, addressBook[chain].platforms.beefyfinance.multicall);
+  const multicall = new MultiCall(web3, addressBook[chain].platforms.toshafinance.multicall);
 
   const calls = pools.map(pool => {
     const vaultContract = new web3.eth.Contract(vaultABI, pool.earnContractAddress);

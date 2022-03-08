@@ -1,4 +1,4 @@
-import { addressBook } from 'blockchain-addressbook';
+import { addressBook } from '@0xtosha/blockchain-addressbook';
 
 const {
   polygon: polygonAddressBook,

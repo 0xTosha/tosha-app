@@ -87,28 +87,72 @@ export const networkSettings = {
     rpcUrls: ['https://forno.celo.org'],
     blockExplorerUrls: ['https://explorer.celo.org/'],
   },
-  // 1285: {
-  //   chainId: `0x${parseInt(1285, 10).toString(16)}`,
-  //   chainName: 'Moonriver',
-  //   nativeCurrency: {
-  //     name: 'Moonriver',
-  //     symbol: 'MOVR',
-  //     decimals: 18,
-  //   },
-  //   rpcUrls: ['https://rpc.moonriver.moonbeam.network'],
-  //   blockExplorerUrls: ['https://moonriver.moonscan.io/'],
-  // },
-  // 25: {
-  //   chainId: `0x${parseInt(25, 10).toString(16)}`,
-  //   chainName: 'Cronos',
-  //   nativeCurrency: {
-  //     name: 'CRO',
-  //     symbol: 'CRO',
-  //     decimals: 18,
-  //   },
-  //   rpcUrls: ['https://evm-cronos.crypto.org'],
-  //   blockExplorerUrls: ['https://cronos.crypto.org/explorer/'],
-  // },
+  1285: {
+    chainId: `0x${parseInt(1285, 10).toString(16)}`,
+    chainName: 'Moonriver',
+    nativeCurrency: {
+      name: 'Moonriver',
+      symbol: 'MOVR',
+      decimals: 18,
+    },
+    rpcUrls: ['https://rpc.moonriver.moonbeam.network'],
+    blockExplorerUrls: ['https://moonriver.moonscan.io/'],
+  },
+  25: {
+    chainId: `0x${parseInt(25, 10).toString(16)}`,
+    chainName: 'Cronos',
+    nativeCurrency: {
+      name: 'CRO',
+      symbol: 'CRO',
+      decimals: 18,
+    },
+    rpcUrls: ['https://evm-cronos.crypto.org'],
+    blockExplorerUrls: ['https://cronos.crypto.org/explorer/'],
+  },
+  122: {
+    chainId: `0x${parseInt(122, 10).toString(16)}`,
+    chainName: 'Fuse',
+    nativeCurrency: {
+      name: 'FUSE',
+      symbol: 'FUSE',
+      decimals: 18,
+    },
+    rpcUrls: ['https://rpc.fuse.io'],
+    blockExplorerUrls: ['https://explorer.fuse.io/'],
+  },
+  1088: {
+    chainId: `0x${parseInt(1088, 10).toString(16)}`,
+    chainName: 'Metis',
+    nativeCurrency: {
+      name: 'METIS',
+      symbol: 'METIS',
+      decimals: 18,
+    },
+    rpcUrls: ['https://andromeda.metis.io/?owner=1088'],
+    blockExplorerUrls: ['https://andromeda-explorer.metis.io/'],
+  },
+  1313161554: {
+    chainId: `0x${parseInt(1313161554, 10).toString(16)}`,
+    chainName: 'Aurora Mainnet',
+    nativeCurrency: {
+      name: 'ETH',
+      symbol: 'ETH',
+      decimals: 18,
+    },
+    rpcUrls: ['https://mainnet.aurora.dev'],
+    blockExplorerUrls: ['https://explorer.mainnet.aurora.dev/'],
+  },
+  1284: {
+    chainId: `0x${parseInt(1284, 10).toString(16)}`,
+    chainName: 'Moonbeam',
+    nativeCurrency: {
+      name: 'GLMR',
+      symbol: 'GLMR',
+      decimals: 18,
+    },
+    rpcUrls: ['https://rpc.api.moonbeam.network'],
+    blockExplorerUrls: ['https://moonscan.io/'],
+  },
 };
 
 export const networkSetup = chainId => {

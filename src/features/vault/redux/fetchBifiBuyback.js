@@ -3,10 +3,10 @@ import {
   VAULT_FETCH_BIFIBUYBACK_FAILURE,
   VAULT_FETCH_BIFIBUYBACK_SUCCESS,
 } from './constants';
+import { apiUrl, getApiCacheBuster } from '../../helpers/getApiInfo';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
 import axios from 'axios';
-import { getApiCacheBuster } from '../../web3/getApiCacheBuster';
 import { useCallback } from 'react';
 
 export function fetchBifibuyback() {
@@ -17,7 +17,7 @@ export function fetchBifibuyback() {
 
     return new Promise((resolve, reject) => {
       const cacheBuster = getApiCacheBuster();
-      const doRequest = axios.get(`http://localhost:3005/bifibuyback?_=${cacheBuster}`);
+      const doRequest = axios.get(`${apiUrl}/bifibuyback?_=${cacheBuster}`);
 
       doRequest.then(
         res => {

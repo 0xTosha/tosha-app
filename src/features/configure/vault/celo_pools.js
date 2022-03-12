@@ -36,13 +36,13 @@ export const celoPools = [
   {
     id: 'celo-orange-maxi',
     logo: 'single-assets/Tosha.png',
-    name: 'ORANGE London',
+    name: 'TOSHA Celo',
     token: 'ORANGE',
-    tokenDescription: 'tosha.Finance',
+    tokenDescription: 'tosha',
     tokenAddress: '0x50359e800aCde1D93BB673E235Bafb86D0846c14',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
-    earnedToken: 'OrangeLP',
+    earnedToken: 'ToshaLP',
     earnedTokenAddress: '0x9aB7Cd67dDb8e56a53bd76622448149F01b7CD20',
     earnContractAddress: '0x9aB7Cd67dDb8e56a53bd76622448149F01b7CD20',
     pricePerFullShare: 1,
@@ -260,7 +260,7 @@ export const celoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['cUSD', 'USDC'],
     risks: [
@@ -276,6 +276,7 @@ export const celoPools = [
       'https://app.sushi.com/add/0x765DE816845861e75A25fCA122bb6898B8B1282a/0xef4229c8c3250C675F21BCefa42f58EfbfF6002a',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x765DE816845861e75A25fCA122bb6898B8B1282a&outputCurrency=0xef4229c8c3250C675F21BCefa42f58EfbfF6002a',
+    createdAt: 1641129424,
   },
   // {
   //   id: 'sushi-celo-wethv2-celo',

@@ -34,6 +34,78 @@ export const avalancheStakePools = [
     fixedStatus: true,
     partners: [beefy],
   },
+
+  {
+    id: 'moo_curve-avax-atricrypto-ripae',
+    name: 'Ripae',
+    logo: 'uncategorized/ATRICRYPTO.png',
+    token: 'mooCurveTriCrypto',
+    tokenDecimals: 18,
+    tokenAddress: '0xe1a8EeA58D63Ea64d00365531D266C2AD1f62FC4',
+    tokenOracle: 'lps',
+    tokenOracleId: 'curve-avax-atricrypto',
+    earnedToken: 'PAE',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x9466Ab927611725B9AF76b9F31B2F879Ff14233d',
+    earnContractAddress: '0xc4C291b76F9aD94F0Ce57E7a5E629D81A02bB1C9',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'PAE',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1648121946,
+    partners: [
+      {
+        logo: 'stake/ripae/logo.png',
+        background: 'stake/ripae/bg.png',
+        text:
+          'Ripae’s mission is to construct a cross-chain algorithmic stablecoin (ASC) economy and connect DeFi networks to make open finance capital efficient and accessible to everyone.\n' +
+          '\n' +
+          'With its experienced team, Ripae Finance will strive to build DeFi’s most convenient, secure, fair, and cost-effective ASC solution in order to help the industry thrive by enabling all participants to work together effortlessly.',
+        website: 'https://avax.ripae.finance/',
+        social: {
+          telegram: 'https://discord.gg/6zq53FB4TS',
+          twitter: 'https://twitter.com/ripaefinance',
+        },
+      },
+    ],
+  },
+
+  {
+    id: 'moo_AVAX-grape',
+    name: 'Grape Finance',
+    logo: 'single-assets/AVAX.svg',
+    token: 'mooAaveAVAX',
+    tokenDecimals: 18,
+    tokenAddress: '0x1B156C5c75E9dF4CAAb2a5cc5999aC58ff4F9090',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'AVAX',
+    earnedToken: 'WINE',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xC55036B5348CfB45a932481744645985010d3A44',
+    earnContractAddress: '0xE1BBde90EB564c5f26dfcDeB9918BDA183BF4e2b',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'WINE',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1645707476,
+    partners: [
+      {
+        logo: 'stake/grape/logo.png',
+        background: 'stake/grape/bg.png',
+        text: 'Supporting the only pegged algorithmic stable currency currently on AVAX, $GRAPE which is pegged to $MIM. The goal is to create a DAO run by the community offering a high yield for investors and utilize two tokens $GRAPE and $WINE to bootstrap liquidity and provide funding for the extensive roadmap. An extensive roadmap including Launchpad, great partnerships, and upcoming lending protocol/new stable reserve currency. Future goals to support multiple chains and create a total defi ecosystem under the GrapeFi umbrella.',
+        website: 'https://grapefinance.app/',
+        social: {
+          telegram: 'https://discord.gg/mZ4QrZwH5M',
+          twitter: 'https://twitter.com/grape_finance',
+        },
+      },
+    ],
+  },
+
   {
     id: 'moo_bifi_avax-singular',
     name: 'Singular',

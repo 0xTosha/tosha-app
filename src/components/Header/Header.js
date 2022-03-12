@@ -1,4 +1,4 @@
-import { Dialog, withStyles } from '@material-ui/core';
+import { Dialog, makeStyles, withStyles } from '@material-ui/core';
 import React, { memo, useCallback, useState } from 'react';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -12,9 +12,9 @@ import { Link } from 'react-router-dom';
 import Menu from '@material-ui/icons/Menu';
 import NightsStay from '@material-ui/icons/NightsStay';
 import Toolbar from '@material-ui/core/Toolbar';
+import Transak from '../Transak/Transak';
 import WbSunny from '@material-ui/icons/WbSunny';
 import { getNetworkBuyUrl } from '../../features/helpers/getNetworkData';
-import { makeStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import { useParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
@@ -91,8 +91,11 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             {renderLink('docs', t('docs'), 'book', classes)}
             {renderLink('blog', t('blog'), 'file-alt', classes)}
             <InsureLink t={t} classes={classes} />
-          </Hidden> */}
-          {/* {renderLink('buy', t('buy'), 'dollar-sign', classes)}
+          </Hidden>
+          <Transak style={{ marginLeft: '5px', marginRight: '5px' }} className={classes.link}>
+            <i className={`fas fa-credit-card ${classes.icon}`} />
+            {t('buy')}
+          </Transak>
           <Link className={classes.btnBoost} to={`/${chain}/stake`}>
             <img alt="Boost" src={require('images/stake/boost.svg')} />
           </Link> */}
@@ -138,7 +141,10 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             <LinkSidebar name="blog" label={t('blog')} icon="file-alt" classes={classes} />
             <LinkSidebar name="forum" label={t('forum')} icon="comments" classes={classes} />
             <InsureLinkSidebar key="insure" t={t} classes={classes} />
-            <LinkSidebar name="buy" label={t('buy')} icon="dollar-sign" classes={classes} />
+            <Transak style={{ width: '100%', paddingTop: '10px' }} className={classes.link}>
+              <i className={`fas fa-credit-car ${classes.icon}`} />
+              {t('buy')}
+            </Transak>
             <IconButton onClick={setNightMode} className={classes.icon}>
               {isNightMode ? <WbSunny /> : <NightsStay />}
             </IconButton>

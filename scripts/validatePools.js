@@ -12,7 +12,7 @@ import { isEmpty } from '../src/features/helpers/utils.js';
 
 const overrides = {
   'bunny-bunny-eol': { keeper: undefined, stratOwner: undefined },
-  'celo-orange-maxi': { keeper: undefined, stratOwner: undefined }, // TODO:
+  'celo-tosha': { keeper: undefined, stratOwner: undefined }, // TODO:
   'sushi-celo-cusd-usdc': {
     keeper: undefined,
     stratOwner: undefined,
@@ -26,6 +26,10 @@ const overrides = {
   'bifi-maxi': { stratOwner: undefined }, // harvester 0xDe30
   'beltv2-4belt': { vaultOwner: undefined }, // moonpot deployer
   'cronos-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
+  'metis-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
+  'aurora-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
+  'fuse-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
+  'moonbeam-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
 };
 
 const oldValidOwners = [
@@ -109,6 +113,18 @@ const validatePools = async () => {
         platformCounts[pool.platform] = platformCounts.hasOwnProperty(pool.platform)
           ? platformCounts[pool.platform] + 1
           : 1;
+      }
+
+      if (!pool.createdAt) {
+        console.error(
+          `Error: ${pool.id} : Pool createdAt timestamp missing - required for UI: vault sorting`
+        );
+        exitCode = 1;
+      } else if (isNaN(pool.createdAt)) {
+        console.error(
+          `Error: ${pool.id} : Pool createdAt timestamp wrong type, should be a number`
+        );
+        exitCode = 1;
       }
 
       addressFields.forEach(field => {

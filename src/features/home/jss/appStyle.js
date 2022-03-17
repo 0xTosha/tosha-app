@@ -17,7 +17,7 @@ const appStyle = theme => ({
     zIndex: 1,
   },
   children: {
-    minHeight: '77vh',
+    minHeight: '70vh',
   },
 });
 

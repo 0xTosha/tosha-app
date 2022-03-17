@@ -1145,6 +1145,7 @@ export const getNetworkConnectors = t => {
               rpc: {
                 1: 'https://andromeda.metis.io/?owner=1088',
                 1088: 'https://andromeda.metis.io/?owner=1088',
+                darkMode: true,
               },
             },
             connector: async (ProviderPackage, options) => {

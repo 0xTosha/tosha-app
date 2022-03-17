@@ -1,7 +1,4 @@
 const styles = theme => ({
-  container: {
-    paddingTop: '4px',
-  },
   tvl: {
     display: 'flex',
     flexDirection: 'column',

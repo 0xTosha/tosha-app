@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import { makeStyles } from '@material-ui/core/styles';
+import { useFetchApys, useFetchBalances, useFetchVaultsData } from '../../redux/hooks';
+import { usePoolsTvl, useUserTvl } from '../../hooks/usePoolsTvl';
+
 import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 import Grid from '@material-ui/core/Grid';
-
-import TVLLoader from './TVLLoader/TVLLoader';
 import NetworksToggle from 'components/NetworksToggle/NetworksToggle';
-import { useConnectWallet } from 'features/home/redux/hooks';
-import { useFetchBalances, useFetchVaultsData, useFetchApys } from '../../redux/hooks';
+import TVLLoader from './TVLLoader/TVLLoader';
 import VisiblePools from '../VisiblePools/VisiblePools';
-import styles from './styles';
-import { usePoolsTvl, useUserTvl } from '../../hooks/usePoolsTvl';
 import { formatGlobalTvl } from 'features/helpers/format';
-import { useFetchBifibuyback } from 'features/vault/redux/fetchBifiBuyback';
 import { getNetworkFriendlyName } from '../../../helpers/getNetworkData';
+import { makeStyles } from '@material-ui/core/styles';
+import styles from './styles';
+import { useConnectWallet } from 'features/home/redux/hooks';
+import { useFetchBifibuyback } from 'features/vault/redux/fetchBifiBuyback';
+import { useTranslation } from 'react-i18next';
 
 const FETCH_INTERVAL_MS = 15 * 1000;
 
@@ -71,48 +71,6 @@ export default function Pools() {
 
   return (
     <Grid container className={classes.container}>
-      <Grid item xs={6}>
-        <h1 className={classes.title}>{t('Vault-Network')}</h1>
-        <NetworksToggle />
-        {fetchVaultsDataDone && activePoolCount && (
-          <>
-            <span className={classes.text}>{`${activePoolCount} ${t('Vault-MainTitle')}`}</span>
-          </>
-        )}
-      </Grid>
-      <Grid item xs={6}>
-        <div className={classes.tvl}>
-          <span className={classes.title}>
-            TVL{' '}
-            {fetchVaultsDataDone && poolsTvl > 0 ? (
-              formatGlobalTvl(poolsTvl)
-            ) : (
-              <TVLLoader className={classes.titleLoader} />
-            )}
-          </span>
-
-          {fetchBifibuybackDone && chainBifibuyback && (
-            <span className={classes.text}>
-              {t('Vault-BifiBuyback', { amount: formatGlobalTvl(chainBifibuyback) })}
-            </span>
-          )}
-
-          <span className={classes.text}>
-            {t('Vault-Deposited')}{' '}
-            {fetchVaultsDataDone && fetchBalancesDone ? (
-              formatGlobalTvl(userTvl)
-            ) : (
-              <TVLLoader className={classes.titleLoader} />
-            )}
-          </span>
-
-          <h4 className={classes.subtitle} style={{ marginTop: '16px' }}>
-            <AllInclusiveIcon className={classes.infinityIcon} />
-            {t('Vault-AutocompoundingNote')}
-          </h4>
-        </div>
-      </Grid>
-
       <VisiblePools
         pools={pools}
         apys={apys}

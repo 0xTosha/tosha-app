@@ -6,6 +6,12 @@ export const allNetworks = [
     id: 1088,
     hash: '/metis',
   },
+  {
+    name: 'OASIS',
+    asset: 'OASIS',
+    id: 42262,
+    hash: '/oasis',
+  },
 ];
 
 const network = allNetworks.find(n => window.location.hash.startsWith('#' + n.hash));

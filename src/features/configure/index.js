@@ -14,6 +14,7 @@ const {
   aurora: auroraAddressBook,
   fuse: fuseAddressBook,
   metis: metisAddressBook,
+  oasis: oasisAddressBook,
   moonbeam: moonbeamAddressBook,
 } = addressBook;
 export {
@@ -31,6 +32,7 @@ export {
   fuseAddressBook,
   metisAddressBook,
   moonbeamAddressBook,
+  oasisAddressBook,
 };
 
 export {
@@ -72,6 +74,7 @@ export { cronosPools } from './vault/cronos_pools';
 export { auroraPools } from './vault/aurora_pools';
 export { fusePools } from './vault/fuse_pools';
 export { metisPools } from './vault/metis_pools';
+export { oasisPools } from './vault/oasis_pools';
 export { moonbeamPools } from './vault/moonbeam_pools';
 export { bscZaps } from './zap/bsc_zaps';
 export { hecoZaps } from './zap/heco_zaps';

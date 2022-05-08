@@ -56,6 +56,9 @@ import {
   polygonPools,
   polygonStakePools,
   polygonZaps,
+  oasisAddressBook,
+  oasisPools,
+  // oasisStakePools,
 } from '../configure';
 
 import { CloverConnector } from '@clover-network/clover-connector';
@@ -83,6 +86,7 @@ const networkTxUrls = {
   122: hash => `https://explorer.fuse.io/tx/${hash}`,
   1088: hash => `https://andromeda-explorer.metis.io/tx/${hash}`,
   1284: hash => `https://moonscan.io/tx/${hash}`,
+  42262: hash => `https://emerald.oasis.dev/tx/${hash}`,
 };
 
 const networkFriendlyName = {
@@ -100,6 +104,7 @@ const networkFriendlyName = {
   122: 'Fuse',
   1088: 'Metis',
   1284: 'Moonbeam',
+  42262: 'Oasis',
 };
 
 const networkBuyUrls = {
@@ -121,6 +126,8 @@ const networkBuyUrls = {
   122: '',
   1088: 'https://netswap.io/#/swap?outputCurrency=0xe6801928061cdbe32ac5ad0634427e140efd05f9',
   1284: '',
+  42262:
+    'https://app.yuzu-swap.com/#/swap?outputCurrency=0x79801BFFA6699d2Be730f818e9A0ad49BBc65951',
 };
 
 export const getNetworkCoin = () => {
@@ -157,6 +164,8 @@ export const getNetworkPools = () => {
       return metisPools;
     case 1284:
       return moonbeamPools;
+    case 42262:
+      return oasisPools;
     default:
       return [];
   }
@@ -192,6 +201,8 @@ export const getNetworkVaults = (networkId = appNetworkId) => {
       return indexBy(metisPools, 'id');
     case 1284:
       return indexBy(moonbeamPools, 'id');
+    case 42262:
+      return indexBy(oasisPools, 'id');
     default:
       return {};
   }
@@ -227,6 +238,8 @@ export const getNetworkLaunchpools = (networkId = appNetworkId) => {
       return indexBy(metisStakePools, 'id');
     case 1284:
       return indexBy(moonbeamStakePools, 'id');
+    // case 42262:
+    //   return indexBy(oasisStakePools, 'id');
     default:
       return {};
   }
@@ -263,6 +276,8 @@ export const getNetworkTokens = () => {
       return metisAddressBook.tokens;
     case 1284:
       return moonbeamAddressBook.tokens;
+    case 42262:
+      return oasisAddressBook.tokens;
     default:
       throw new Error(
         `Create address book for chainId(${chainId}) first. Check out https://github.com/beefyfinance/address-book`
@@ -315,6 +330,8 @@ export const getNetworkBurnTokens = () => {
     case 1088:
       return {};
     case 1284:
+      return {};
+    case 42262:
       return {};
     default:
       throw new Error(`Create address book for this chainId first.`);
@@ -494,6 +511,8 @@ export const getNetworkMulticall = () => {
       return '0x4fd2e1c2395dc088F36cab06DCe47F88A912fC85';
     case 1284:
       return '0xC9F6b1B53E056fd04bE5a197ce4B2423d456B982';
+    case 42262:
+      return '0x9F8492A08977C92dB6F90054c875D5ee24A76d14';
     default:
       return '';
   }
@@ -1209,6 +1228,18 @@ export const getNetworkConnectors = t => {
             await provider.enable();
 
             return provider;
+          },
+        },
+      };
+    case 42262:
+      return {
+        network: 'oasis',
+        cacheProvider: true,
+        providerOptions: {
+          injected: {
+            display: {
+              name: 'MetaMask',
+            },
           },
         },
       };

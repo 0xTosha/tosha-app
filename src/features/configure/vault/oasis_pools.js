@@ -47,7 +47,7 @@ export const oasisPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'yuzuswap-m.usdt-m.usdc',
+    oracleId: 'yuzuswap-wrose-weusdt',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
@@ -66,6 +66,5 @@ export const oasisPools = [
       'https://app.yuzu-swap.com/#/swap?outputCurrency=0xdC19A122e268128B5eE20366299fc7b5b199C8e3&inputCurrency=0x21C718C22D52d0F3a789b752D4c2fD5908a8A733',
     buyTokenUrl:
       'https://app.yuzu-swap.com/#/swap?outputCurrency=0xdC19A122e268128B5eE20366299fc7b5b199C8e3&inputCurrency=0x21C718C22D52d0F3a789b752D4c2fD5908a8A733',
-    createdAt: 1642365937,
   },
 ];

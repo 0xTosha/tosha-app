@@ -1,6 +1,6 @@
 export const oasisPools = [
   {
-    id: 'oasis-tosha',
+    id: 'emerald-tosha',
     logo: 'single-assets/Tosha.png',
     name: 'TOSHA OASIS',
     token: 'ORANGE',

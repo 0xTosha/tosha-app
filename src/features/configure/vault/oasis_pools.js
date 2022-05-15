@@ -38,7 +38,7 @@ export const oasisPools = [
     name: 'wROSE-weUSDT LP',
     token: 'wROSE-weUSDT LP',
     tokenDescription: 'Yuzuswap',
-    tokenAddress: '0x1caD5f8f5D4C0AD49646B2565CC0cA725E4280EA',
+    tokenAddress: '0xfb9BD52Abe613A5C4A20e9fC09462A2EC5F2d1B2',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'yuzu-wrose-weusdt',

@@ -51,7 +51,7 @@ export const oasisPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Yuzuswap',
+    platform: 'yuzu',
     assets: ['wRose', 'mUSDT'],
     risks: [
       'COMPLEXITY_LOW',

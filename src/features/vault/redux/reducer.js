@@ -17,7 +17,7 @@ const reducers = [
   fetchApysReducer,
   fetchZapEstimateReducer,
   fetchBalancesReducer,
-  fetchBifiBuybackReducer,
+  // fetchBifiBuybackReducer,
   updateLaunchpoolsReducer,
 ];
 

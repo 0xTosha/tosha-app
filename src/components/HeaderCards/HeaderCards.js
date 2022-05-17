@@ -25,7 +25,7 @@ export function HeaderCards() {
   const { pools, fetchVaultsData, fetchVaultsDataPending, fetchVaultsDataDone } =
     useFetchVaultsData();
   const { web3, address } = useConnectWallet();
-  const { bifibuyback, fetchBifibuyback, fetchBifibuybackDone } = useFetchBifibuyback();
+  // const { bifibuyback, fetchBifibuyback, fetchBifibuybackDone } = useFetchBifibuyback();
   const { poolsTvl } = usePoolsTvl(pools);
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
   const { tokens, fetchBalances, fetchBalancesPending, fetchBalancesDone } = useFetchBalances();

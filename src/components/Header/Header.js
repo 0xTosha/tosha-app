@@ -30,7 +30,7 @@ const StyledDialog = withStyles(theme => ({
   },
 }))(Dialog);
 
-const Header = ({ links, isNightMode, setNightMode }) => {
+const Header = ({ links, isNightMode }) => {
   const { chain } = useParams();
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -115,7 +115,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
         </Hidden>
       </Toolbar>
 
-      {/* <Hidden mdUp implementation="js">
+      <Hidden mdUp implementation="js">
         <Drawer
           variant="temporary"
           anchor={'right'}
@@ -134,7 +134,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             <Close />
           </IconButton>
           <div className={classes.appResponsive}>{links}</div>
-          <div style={{ textAlign: 'center' }}>
+          {/* <div style={{ textAlign: 'center' }}>
             <LinkSidebar name="vote" label={t('vote')} icon="vote-yea" classes={classes} />
             <LinkSidebar name="dashboard" label={t('stats')} icon="chart-bar" classes={classes} />
             <LinkSidebar name="docs" label={t('docs')} icon="book" classes={classes} />
@@ -148,9 +148,9 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             <IconButton onClick={setNightMode} className={classes.icon}>
               {isNightMode ? <WbSunny /> : <NightsStay />}
             </IconButton>
-          </div>
+          </div> */}
         </Drawer>
-      </Hidden> */}
+      </Hidden>
     </AppBar>
   );
 };

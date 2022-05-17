@@ -129,7 +129,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={6} sm={4} md={3}>
+      {/* <Grid item xs={6} sm={4} md={3}>
         <FormControl>
           <FormControlLabel
             className={classes.label}
@@ -148,7 +148,7 @@ const Filters = ({
             }
           />
         </FormControl>
-      </Grid>
+      </Grid> */}
 
       <Grid item xs={6} sm={4} md={3}>
         <FormControl className={classes.selectorContainer}>

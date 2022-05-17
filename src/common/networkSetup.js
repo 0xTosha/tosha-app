@@ -1,32 +1,10 @@
 export const networkSettings = {
-  1088: {
-    chainId: `0x${parseInt(1088, 10).toString(16)}`,
-    chainName: 'Metis',
-    nativeCurrency: {
-      name: 'METIS',
-      symbol: 'METIS',
-      decimals: 18,
-    },
-    rpcUrls: ['https://andromeda.metis.io/?owner=1088'],
-    blockExplorerUrls: ['https://andromeda-explorer.metis.io/'],
-  },
-  42220: {
-    chainId: `0x${parseInt(42220, 10).toString(16)}`,
-    chainName: 'Celo',
-    nativeCurrency: {
-      name: 'CELO',
-      symbol: 'CELO',
-      decimals: 18,
-    },
-    rpcUrls: ['https://forno.celo.org'],
-    blockExplorerUrls: ['https://explorer.celo.org/'],
-  },
   42262: {
     chainId: `0x${parseInt(42262, 10).toString(16)}`,
-    chainName: 'Oasis',
+    chainName: 'Emerald',
     nativeCurrency: {
-      name: 'ROSE',
-      symbol: 'ROSE',
+      name: 'wROSE',
+      symbol: 'wROSE',
       decimals: 18,
     },
     rpcUrls: ['https://emerald.oasis.dev'],

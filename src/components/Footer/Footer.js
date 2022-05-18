@@ -47,7 +47,7 @@ const Footer = () => {
       </div>
       <div className={classes.column}>
         <a
-          href="https://twitter.com/0xtosha"
+          href="https://twitter.com/toshadao"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}

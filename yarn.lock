@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@0xtosha/blockchain-addressbook@^0.5.26":
-  "integrity" "sha512-sPp0VX0UBri69ePIyP/FsZBWtYi+nL4BexsUHmjXeMmI76uLdsvd/al2I2mObwXWa8Hi5ntlW3t/5OP+PhEqQA=="
-  "resolved" "https://registry.npmjs.org/@0xtosha/blockchain-addressbook/-/blockchain-addressbook-0.5.26.tgz"
-  "version" "0.5.26"
+"@0xtosha/blockchain-addressbook@^0.5.27":
+  "integrity" "sha512-VsTaeKWqI6G56eoYo0dV4M5rhfZi21Yr2yLmJBwdYctopWI8Zqv/X3ckzOFaucTTI3dsPpZAa+LlLBnevbU4jg=="
+  "resolved" "https://registry.npmjs.org/@0xtosha/blockchain-addressbook/-/blockchain-addressbook-0.5.27.tgz"
+  "version" "0.5.27"
 
 "@ampproject/remapping@^2.1.0":
   "integrity" "sha512-qRmjj8nj9qmLTQXXmaR1cck3UXSRMPrbsLJAasZpF+t3riI71BXed5ebIOYwQntykeZuhjsdweEc9BxH5Jc26w=="

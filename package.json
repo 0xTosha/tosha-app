@@ -7,7 +7,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@0xtosha/blockchain-addressbook": "^0.5.26",
+    "@0xtosha/blockchain-addressbook": "^0.5.27",
     "@clover-network/clover-connector": "^1.0.0",
     "@davatar/react": "^1.8.1",
     "@download/blockies": "^1.0.3",
